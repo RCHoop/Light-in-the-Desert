@@ -296,6 +296,15 @@ ol.faith .refs { color: var(--rose); font-size: .9rem; }
 @media (max-width: 700px) { .welcome .wbody { padding: 1.35rem 1.15rem 2.4rem; } }
 .invite .btn.sharebig { margin-top: .3rem; }
 .btn.sharebig { width: 100%; justify-content: center; font-size: 1.1rem; padding: .9rem 1rem; }
+/* Prayer team panel (public page): big, plain, step by step for older members */
+.prayteam { border-width: 2px; gap: .75rem; padding: 1.5rem 1.5rem 1.6rem; }
+.prayteam h2 { font-size: clamp(1.4rem, 5vw, 1.75rem); line-height: 1.25; }
+.prayteam p, .prayteam .steps { font-size: 1.08rem; line-height: 1.55; }
+.prayteam .steps { margin: 0; padding: 0; list-style: none; counter-reset: st; display: grid; gap: .6rem; max-width: 52ch; }
+.prayteam .steps li { counter-increment: st; display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; align-items: start; }
+.prayteam .steps li::before { content: counter(st); display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: #2a1a08; font-weight: 700; }
+.prayteam .btn.sharebig { font-size: 1.2rem; padding: 1.05rem 1rem; text-align: center; }
+@media (max-width: 700px) { .prayteam { padding: 1.25rem 1.1rem 1.35rem; } }
 button.sharelink { background: none; border: 0; padding: 0; font-family: inherit; cursor: pointer; }
 .sharepanel { flex-basis: 100%; display: grid; gap: .6rem; margin-top: .5rem; padding: 1rem; border: 1.5px solid var(--accent); border-radius: 12px; background: var(--surface); color: var(--ink); font-weight: 400; }
 .sharepanel textarea { font: inherit; font-size: 1rem; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); width: 100%; min-width: 0; resize: vertical; }
@@ -1187,11 +1196,21 @@ const PUBLIC_PRAY = [
   ["Our church", "Blessings, protection, and may the Holy Spirit dwell in our building and in each and every heart."],
   ["Restored to Hope and Celebrate Recovery", "Pray for God's clear direction and guidance for Bill Reasons, who leads these ministries."]
 ];
-const prayTeam = () => CHURCH.whatsappUrl ? `<div class="invite prayteam"><span class="kicker">Prayer team</span><h2>Join our prayer team</h2><p>The full prayer list, with the names of those who need our prayers, is shared in our church WhatsApp group. Join us there and pray along each week.</p>${linkBtn(CHURCH.whatsappUrl, "Join our prayer team", "primary sharebig", "prayer")}</div>` : "";
+const prayTeam = () => CHURCH.whatsappUrl ? `<div class="invite prayteam">
+      <span class="kicker">Looking for the prayer list?</span>
+      <h2>The full prayer list is in our WhatsApp group</h2>
+      <p>Our full weekly prayer list, with everyone who has asked for prayer, is shared in our church's private WhatsApp group. To protect their privacy, the names are not shown on this page.</p>
+      <ol class="steps">
+        <li>Tap the big button below to join the group. You'll need the free WhatsApp app on your phone.</li>
+        <li>Once you're in, look for the weekly prayer list post.</li>
+        <li>Pray along with your church family each week.</li>
+      </ol>
+      ${linkBtn(CHURCH.whatsappUrl, "Join our prayer team on WhatsApp", "primary sharebig", "prayer")}
+    </div>` : "";
 const publicPrayer = () => `
     <div class="stack" style="gap:.3rem"><span class="kicker">Prayer requests · ${esc(WEEK.date.replace("Sunday, ", ""))}</span><h2>Pray for one another</h2></div>
-    <div class="btns">${shareBtn("Please pray with us at Light in the Desert church, Yucca.", "Share by text", "btn")}</div>
     ${prayTeam()}
+    <div class="btns">${shareBtn("Please pray with us at Light in the Desert church, Yucca.", "Share by text", "btn")}</div>
     ${pbanner("praise", "", "Praise report:")}
     ${pbanner("nation", "rose")}
     ${pbanner("all", "")}
