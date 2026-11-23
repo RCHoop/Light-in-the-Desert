@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="robots" content="noindex, nofollow"></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="robots" content="noindex, nofollow"></head><body>
 <title>Light in the Desert</title>
 <meta name="description" content="Light in the Desert, Southern Baptist Church of Yucca, Arizona: this week's bulletin, events and prayer list.">
 <meta property="og:title" content="Light in the Desert church, Yucca">
@@ -202,6 +202,53 @@ details.postd summary { padding: .2rem 0; }
 details.postd .post { margin-top: 1rem; }
 hr.sep { border: 0; border-top: 1px solid var(--line); margin: .5rem 0; width: 100%; }
 ul.bldg { list-style: none; margin: 0; padding: 0; display: grid; gap: .3rem; font-size: .95rem; }
+
+
+/* Month calendar */
+.cal-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: .5rem 1rem; }
+.cal-nav { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.cal-nav select { font: inherit; font-size: .85rem; font-weight: 600; padding: .25rem .4rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); max-width: 100%; }
+.tbtn:disabled { opacity: .4; cursor: default; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.cal-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .8rem; color: var(--muted); }
+.cal-legend span::before, .cal-dot { content: ""; display: inline-block; width: .75rem; height: .75rem; border-radius: 3px; margin-right: .35rem; vertical-align: -1px; }
+.cal-legend .k-church::before, .k-church.cal-dot { background: var(--sage-soft); border: 1px solid var(--sage); }
+.cal-legend .k-event::before, .k-event.cal-dot { background: var(--accent-soft); border: 1px solid var(--accent); }
+.cal-legend .k-group::before, .k-group.cal-dot { background: var(--rose-soft); border: 1px solid var(--rose); }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); border-radius: 4px; }
+.cal-dow { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: .35rem .4rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
+.cal-cell { min-height: 7.5rem; min-width: 0; padding: .3rem; margin: 0; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); text-align: left; font: inherit; display: flex; flex-direction: column; gap: .18rem; align-items: stretch; justify-content: flex-start; cursor: pointer; overflow: hidden; }
+button.cal-cell:hover { background: var(--bg); }
+.cal-empty { background: var(--bg); cursor: default; }
+.cal-num { font-weight: 700; font-size: .85rem; align-self: flex-start; padding: 0 .3rem; border-radius: 999px; }
+.cal-past .cal-num { color: var(--muted); }
+.cal-today .cal-num { background: var(--accent); color: #2a1a08; }
+.cal-sel { box-shadow: inset 0 0 0 2px var(--accent); }
+.cal-ev { font-size: .72rem; line-height: 1.25; padding: .1rem .25rem; border-radius: 4px; color: var(--ink); overflow-wrap: break-word; hyphens: auto; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cal-ev.k-church { background: var(--sage-soft); }
+.cal-ev.k-event { background: var(--accent-soft); font-weight: 600; }
+.cal-ev.k-group { background: var(--rose-soft); }
+.cal-detail { border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; background: var(--surface); }
+.cal-detail .title { display: flex; align-items: center; }
+@media (max-width: 700px) {
+  .cal-cell { min-height: 4.8rem; padding: .15rem; gap: .12rem; }
+  .cal-num { font-size: .72rem; padding: 0 .2rem; }
+  .cal-ev { font-size: .56rem; -webkit-line-clamp: 2; padding: .05rem .12rem; }
+  .cal-ev b { display: none; }
+  .cal-dow { font-size: .6rem; padding: .3rem .1rem; text-align: center; letter-spacing: 0; }
+}
+@media print {
+  @page { size: letter landscape; margin: .4in; }
+  body { background: #fff !important; }
+  body::before, .hero, .tabs, footer, .noprint, .adminbar { display: none !important; }
+  #views > .view > *:not(#monthcal) { display: none !important; }
+  main { padding: 0 !important; } main .wrap { padding: 0 !important; max-width: none !important; }
+  .cal-cell { min-height: 1.1in; break-inside: avoid; }
+  .cal-ev { font-size: 7.5pt; -webkit-line-clamp: 4; }
+  .cal-ev b { display: inline !important; }
+  .cal-grid, .cal-cell, .cal-dow { border-color: #999 !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
 
 /* Faith & leadership */
 details { border-top: 1px solid var(--line); padding: .75rem 0; }
@@ -451,7 +498,7 @@ const RESET = (() => {
 const CLOSE = "</" + "script>";
 function pageHtml(data) {
   const json = JSON.stringify(data).replace(/</g, "\\u003c");
-  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + RESET + '</style></head><body>'
+  return '<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + RESET + '</style></head><body>'
     + '<title>Light in the Desert</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'
     + '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Source+Sans+3:wght@400;600;700&family=Alegreya:ital,wght@0,400;1,400&display=swap">\n'
@@ -816,7 +863,6 @@ document.addEventListener("submit", (ev) => {
     }
     const i = next.bookings.findIndex(x => x.id === id);
     if (i >= 0) next.bookings[i] = item; else next.bookings.push(item);
-    next.bookings = next.bookings.filter(isActive);
     editing = null; save(next); return;
   }
   if (f.dataset.kind === "pray") {
@@ -855,7 +901,7 @@ document.addEventListener("submit", (ev) => {
     }
     const i = next.events.findIndex(x => x.id === id);
     if (i >= 0) next.events[i] = item; else next.events.push(item);
-    next.events = next.events.filter(e => e.date >= todayAZ()).sort((a, b) => a.date.localeCompare(b.date));
+    next.events = next.events.sort((a, b) => a.date.localeCompare(b.date));
   } else {
     const item = { id, title: val("an-title"), body: val("an-body") };
     if (!item.title) { msg = "Add a headline."; render(); return; }
@@ -1000,6 +1046,7 @@ const VIEWS = {
   },
 
   events: () => `
+    ${monthCal()}
     <div class="two">
       <div class="stack">
         <h2>Coming up</h2>
@@ -1088,6 +1135,84 @@ const VIEWS = {
       </div>
     </div>`
 };
+
+/* ---------- Month calendar: a wall-calendar view. Past months stay available as an archive. ---------- */
+const DOWS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const CAL_FIRST = "2026-11";   // first month in the archive
+let calMonth = todayAZ().slice(0, 7), calDay = null;
+const monthName = (ym) => { const [y, m] = ym.split("-").map(Number); return `${MONTHS_LONG[m - 1]} ${y}`; };
+const shiftMonth = (ym, n) => { const [y, m] = ym.split("-").map(Number); const d = new Date(Date.UTC(y, m - 1 + n, 1)); return d.toISOString().slice(0, 7); };
+function monthOptions() {
+  let first = CAL_FIRST;
+  for (const e of DATA.events) if (e.date.slice(0, 7) < first) first = e.date.slice(0, 7);
+  const last = shiftMonth(todayAZ().slice(0, 7), 12), out = [];
+  for (let m = first; m <= last; m = shiftMonth(m, 1)) out.push(m);
+  return out;
+}
+const clockMin = (s) => {
+  const t = String(s || ""), a = t.match(/(\d{1,2})(?::(\d{2}))?\s*([AaPp])\.?[Mm]/);
+  if (a) { let h = +a[1] % 12; if (/p/i.test(a[3])) h += 12; return h * 60 + +(a[2] || 0); }
+  const b = t.match(/^(\d{1,2}):(\d{2})$/); return b ? +b[1] * 60 + +b[2] : 24 * 60;
+};
+const shortTime = (s) => String(s || "").replace(/:00/g, "").replace(/\s?AM/g, "a").replace(/\s?PM/g, "p");
+function calEntries(iso) {
+  const out = [], dow = dowOf(iso), nth = Math.ceil(dUTC(iso).getUTCDate() / 7);
+  for (const w of CHURCH.weekly) if (DOWS.indexOf(w.day) === dow) out.push({ k: "church", time: w.time, title: w.title, where: w.who, sort: clockMin(w.time) });
+  for (const m of CHURCH.monthly) { const [n, dd] = m.day.split(" "); if (DOWS.indexOf(dd) === dow && parseInt(n, 10) === nth) out.push({ k: "church", time: m.time, title: m.title, where: m.who, sort: clockMin(m.time) }); }
+  for (const e of DATA.events) if (e.date === iso) out.push({ k: "event", time: evTime(e), title: e.title, where: e.where, sort: e.start ? toMin(e.start) : clockMin(e.time) });
+  for (const b of DATA.bookings || []) if (occursOn(b, iso)) out.push({ k: "group", time: fmtRange(b.start, b.end), title: b.group, where: b.room, sort: toMin(b.start) });
+  // a dated event that is also a regular gathering (same name) shows once, as the event
+  const key = (t) => String(t).toLowerCase().replace(/[^a-z]/g, "");
+  const evs = out.filter(e => e.k === "event").map(e => key(e.title));
+  return out.filter(e => e.k !== "church" || !evs.some(k => k.includes(key(e.title).slice(0, 12)) || key(e.title).includes(k)))
+    .sort((a, b) => a.sort - b.sort);
+}
+function calDetail(iso) {
+  const ents = calEntries(iso);
+  const day = dUTC(iso).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  return `<div class="cal-detail noprint" id="cal-detail" tabindex="-1"><h3>${esc(day)}</h3>${ents.length ? `<ul class="list">${ents.map(e =>
+    `<li><span class="title"><span class="cal-dot k-${e.k}" aria-hidden="true"></span>${esc(e.title)}</span><span class="muted small">${esc([e.time, e.where].filter(Boolean).join(" · "))}</span></li>`).join("")}</ul>` : '<p class="muted">Nothing scheduled.</p>'}</div>`;
+}
+function monthCal() {
+  const today = todayAZ(), opts = monthOptions();
+  if (!opts.includes(calMonth)) calMonth = today.slice(0, 7);
+  const [y, m] = calMonth.split("-").map(Number);
+  const lead = dowOf(`${calMonth}-01`), days = new Date(Date.UTC(y, m, 0)).getUTCDate(), cells = [];
+  for (let i = 0; i < lead; i++) cells.push('<div class="cal-cell cal-empty" aria-hidden="true"></div>');
+  for (let d = 1; d <= days; d++) {
+    const iso = `${calMonth}-${String(d).padStart(2, "0")}`, ents = calEntries(iso);
+    const cls = ["cal-cell", iso === today ? "cal-today" : "", iso === calDay ? "cal-sel" : "", iso < today ? "cal-past" : ""].filter(Boolean).join(" ");
+    cells.push(`<button type="button" class="${cls}" data-calday="${iso}" aria-label="${esc(longDate(iso))}, ${ents.length} item${ents.length === 1 ? "" : "s"}"><span class="cal-num">${d}</span>${ents.map(e =>
+      `<span class="cal-ev k-${e.k}">${e.time ? `<b>${esc(shortTime(e.time))}</b> ` : ""}${esc(e.title)}</span>`).join("")}</button>`);
+  }
+  while (cells.length % 7) cells.push('<div class="cal-cell cal-empty" aria-hidden="true"></div>');
+  const isPast = calMonth < today.slice(0, 7);
+  return `<div class="stack" id="monthcal">
+    <div class="cal-head"><div class="stack" style="gap:.2rem"><span class="kicker">${isPast ? "Calendar archive" : "Church calendar"}</span><h2>${esc(monthName(calMonth))}</h2></div>
+      <div class="cal-nav noprint">
+        <button type="button" class="tbtn" data-calnav="-1"${calMonth <= opts[0] ? " disabled" : ""} aria-label="Previous month">‹ Prev</button>
+        <label class="cal-pick-l"><span class="sr-only">Choose a month</span><select id="cal-pick">${opts.map(v => `<option value="${v}"${v === calMonth ? " selected" : ""}>${monthName(v)}${v < today.slice(0, 7) ? " (archive)" : ""}</option>`).join("")}</select></label>
+        <button type="button" class="tbtn" data-calnav="1"${calMonth >= opts[opts.length - 1] ? " disabled" : ""} aria-label="Next month">Next ›</button>
+        ${calMonth !== today.slice(0, 7) ? '<button type="button" class="tbtn" data-calnav="0">This month</button>' : ""}
+        <button type="button" class="tbtn" data-calprint>Print</button>
+      </div></div>
+    <div class="cal-legend"><span class="k-church">Weekly &amp; monthly church gatherings</span><span class="k-event">Special events</span><span class="k-group">Community groups</span></div>
+    <div class="cal-grid">${DOWS.map(x => `<div class="cal-dow">${x}</div>`).join("")}${cells.join("")}</div>
+    <p class="muted small noprint">Tap a day to see its times and places. Earlier months stay here as an archive: pick one from the list.</p>
+    ${calDay && calDay.startsWith(calMonth) ? calDetail(calDay) : ""}
+  </div>`;
+}
+document.addEventListener("click", (ev) => {
+  const day = ev.target.closest("[data-calday]"), nav = ev.target.closest("[data-calnav]"), pr = ev.target.closest("[data-calprint]");
+  if (!day && !nav && !pr) return;
+  if (pr) { window.print(); return; }
+  if (nav) { const n = +nav.dataset.calnav; calMonth = n === 0 ? todayAZ().slice(0, 7) : shiftMonth(calMonth, n); calDay = null; }
+  if (day) calDay = calDay === day.dataset.calday ? null : day.dataset.calday;
+  render();
+  if (day && calDay) document.getElementById("cal-detail")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+document.addEventListener("change", (ev) => { if (ev.target.id === "cal-pick") { calMonth = ev.target.value; calDay = null; render(); } });
 
 function render() {
   const raw = (location.hash || "#home").slice(1);
