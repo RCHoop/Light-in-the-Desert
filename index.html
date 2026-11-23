@@ -164,6 +164,8 @@ section.view { display: grid; gap: 1.9rem; }
 .banner.join { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.2rem; background: var(--accent-soft); }
 .banner.join strong { color: var(--accent-ink); }
 .banner.join > div { min-width: 0; flex: 1 1 260px; }
+.banner.ask { background: var(--accent-soft); display: grid; gap: .6rem; }
+.banner.ask strong { color: var(--accent-ink); font-size: 1.05rem; }
 
 /* Ministries */
 .mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
@@ -370,6 +372,7 @@ const CHURCH = {
   phone: "928-377-1016",
   cell: "",
   email: "pastorbasye@gmail.com",
+  questions: { name: "Rob Hooper", phone: "909-641-2700" },  // who takes calls and texts with questions; clear phone to hide the box
   facebookUrl: "https://www.facebook.com/groups/218526316029915",
   youtubeUrl: "https://www.youtube.com/channel/UCalsVJcLXegbD0O24xtia7A/streams",
   websiteUrl: "https://yucca.church/",
@@ -507,6 +510,10 @@ const textHref = (body) => smsBody(CHURCH.cell.replace(/[^0-9]/g, ""), body);
 const textPastor = (body, cls = "btn primary") => `<a class="${cls}" href="tel:${esc(CHURCH.phone.replace(/[^0-9]/g, ""))}">${icon("phone")}Call the church office</a>`;
 const emailPastor = (subject) => `<a class="btn" href="${esc("mailto:" + CHURCH.email + (subject ? "?subject=" + encodeURIComponent(subject) : ""))}" target="_blank" rel="noopener">${icon("mail")}Email</a>`;
 const linkBtn = (url, label, cls = "", ic = "link") => `<a class="btn ${cls}" href="${esc(url)}" target="_blank" rel="noopener">${icon(ic)}${esc(label)}</a>`;
+/* Questions: one person who takes calls and texts for the church (CHURCH.questions). */
+const askRob = (body = "") => { const q = CHURCH.questions || {}; if (!q.phone) return "";
+  const num = q.phone.replace(/[^0-9]/g, ""), first = String(q.name || "us").split(" ")[0];
+  return `<div class="banner ask"><strong>Questions? Call or text ${esc(q.name)} at ${esc(q.phone)}</strong><div class="btns"><a class="btn primary" href="tel:${num}">${icon("phone")}Call ${esc(first)}</a><a class="btn" href="${esc(smsBody(num, body))}" target="_blank" rel="noopener">${icon("text")}Text ${esc(first)}</a></div></div>`; };
 
 const TABS = [["home", "Home"], ["bulletin", "Bulletin"], ["scripture", "Scripture"], ["prayer", "Prayer"], ["events", "Events"], ["pastor", "Pastor"], ["kids", "Children"], ["standing", "Blog"], ["connect", "Connect"]];
 const INVITE = { head: "Light travels farther when it's shared.", sub: "Text this page to a friend, neighbor or family member." };
@@ -1035,7 +1042,7 @@ const VIEWS = {
     return `
     <div class="stack" style="gap:.3rem"><span class="kicker">Get involved</span><h2>There's a place for you here</h2>
     <p class="muted" style="max-width:62ch">Everything happening at Light in the Desert, in one list. Not sure where you fit? Call the church office at ${esc(CHURCH.phone)} or email Pastor Wayne.</p>
-    <div class="btns">${textPastor("")}${emailPastor("")}</div></div>
+    <div class="btns">${textPastor("")}${emailPastor("")}</div>${askRob()}</div>
     <div class="chips">${kinds.map(k => `<span class="chip">${esc(k)}</span>`).join("")}</div>
     <div class="mgrid">${CHURCH.ministries.map(m => `
       <article class="ministry">
@@ -1084,6 +1091,7 @@ const VIEWS = {
     <p class="muted" style="max-width:62ch">To protect our church family's privacy, the names on our prayer list aren't shown on this public page.</p>
     <div class="stack" style="gap:.5rem">
       <h3>Have a prayer request?</h3>
+      ${askRob("Prayer request: ")}
       <p class="muted">Call the church office or email Pastor Wayne & Sandi.</p>
       <div class="btns">${textPastor("Prayer request: ")}${emailPastor("Prayer request")}</div>
       <div class="copyrow"><code id="pp">${esc(CHURCH.phone)}</code><button class="copybtn" data-copy="pp">Copy</button><code id="pe">${esc(CHURCH.email)}</code><button class="copybtn" data-copy="pe">Copy</button></div>
@@ -1108,7 +1116,7 @@ const VIEWS = {
     <div class="stack" id="building">
       <div class="stack" style="gap:.3rem"><span class="kicker">Building calendar</span><h2>Community groups meeting here</h2>
       <p class="muted" style="max-width:62ch">Our church opens its doors to the community. These groups use the building outside our own services. To ask about using the building, call ${esc(CHURCH.phone)}.</p>
-      <div class="btns">${textPastor("Hi Pastor Wayne, I'd like to ask about using the church building: ")}${emailPastor("Using the church building")}</div></div>
+      <div class="btns">${textPastor("Hi Pastor Wayne, I'd like to ask about using the church building: ")}${emailPastor("Using the church building")}</div>${askRob("Hi Rob, I'd like to ask about using the church building: ")}</div>
       ${addArea("book")}
       <ul class="list">${activeBookings().map(b => isEditing("book", b.id) ? `<li>${bookForm(b)}</li>` : bookingRow(b)).join("") || '<li class="muted">No community groups are booked right now.</li>'}</ul>
       ${checker()}
@@ -1144,6 +1152,10 @@ const VIEWS = {
           <h2>Plan your visit</h2>
           <p>Come as you are, casual or formal. Travelers and locals are always welcome. Sunday Bible Study is at 8:45 AM, and the service and Children's Ministry start at 10:15 AM.</p>
           <div class="copyrow"><code id="addr">${esc(CHURCH.address)}</code><button class="copybtn" data-copy="addr">Copy</button></div>
+        </div>
+        <div class="stack">
+          <h3>Questions?</h3>
+          ${askRob()}
         </div>
         <div class="stack">
           <h3>Contact Pastor Wayne Basye</h3>
@@ -1212,6 +1224,7 @@ const publicPrayer = () => `
     <div class="pgroup"><h3>Pray for our community</h3><ul class="plist">${PUBLIC_PRAY.map(([n, need]) => `<li><b>${esc(n)}</b>: ${esc(need)}</li>`).join("")}</ul></div>
     <div class="stack" style="gap:.5rem">
       <h3>Have a prayer request?</h3>
+      ${askRob("Prayer request: ")}
       <p class="muted">Call the church office or email Pastor Wayne & Sandi.</p>
       <div class="btns">${textPastor("Prayer request: ")}${emailPastor("Prayer request")}</div>
       <div class="copyrow"><code id="pp">${esc(CHURCH.phone)}</code><button class="copybtn" data-copy="pp">Copy</button><code id="pe">${esc(CHURCH.email)}</code><button class="copybtn" data-copy="pe">Copy</button></div>
