@@ -1,0 +1,1160 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Light in the Desert</title>
+<meta name="description" content="Light in the Desert, Southern Baptist Church of Yucca, Arizona: this week's bulletin, events and prayer list.">
+<meta property="og:title" content="Light in the Desert church, Yucca">
+<meta property="og:description" content="This week's bulletin, events and prayer list.">
+<meta property="og:image" content="https://rchoop.github.io/Light-in-the-Desert/light-in-the-desert.png">
+<meta property="og:url" content="https://rchoop.github.io/Light-in-the-Desert/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Source+Sans+3:wght@400;600;700&family=Alegreya:ital,wght@0,400;1,400&display=swap">
+<style id="app-style">
+/* Layout: a desert-sunrise hero (cross and saguaro, after the church logo) over an app shell; tabs on top on wide screens, at the bottom on phones. */
+:root {
+  --bg: #f5f3f6;
+  --surface: #ffffff;
+  --ink: #2a2340;
+  --muted: #625b76;
+  --line: #e2dde8;
+  --accent: #d9822b;
+  --accent-ink: #94490a;
+  --accent-soft: #fbecdc;
+  --sage: #4f6b4c;
+  --sage-soft: #e6eee3;
+  --rose: #a3364a;
+  --rose-soft: #f8e3e6;
+  --live: #c0392b;
+  --font-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-scripture: "Alegreya", Georgia, serif;
+}
+/* Light is the default for everyone; dark only if a page sets data-theme="dark". */
+:root[data-theme="dark"] {
+  --bg: #16132a; --surface: #211d37; --ink: #f1eef8; --muted: #a9a2c0; --line: #342e52;
+  --accent: #f0a24a; --accent-ink: #f6b866; --accent-soft: #3a2a25; --sage: #a3c09b; --sage-soft: #24302a;
+  --rose: #f08a9b; --rose-soft: #3a2230; --live: #ff6b5b;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.55; }
+a { color: var(--accent-ink); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.2; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+.wrap { max-width: 880px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Hero */
+.hero { position: relative; color: #fff8ee; overflow: hidden; background: #3b2f63; }
+.hero svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero .wrap { position: relative; padding-block: 2.2rem 4.4rem; display: grid; gap: .5rem; }
+.eyebrow { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; opacity: .92; }
+.hero h1 { font-size: clamp(2.2rem, 7vw, 3.4rem); text-shadow: 0 2px 18px rgba(30,20,60,.45); }
+.hero .verse { font-family: var(--font-scripture); font-style: italic; font-size: 1.08rem; max-width: 34ch; text-shadow: 0 1px 10px rgba(30,20,60,.5); }
+
+/* Tabs */
+.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.tabs .wrap { display: flex; gap: .1rem; overflow-x: auto; scrollbar-width: none; }
+.tab { display: flex; align-items: center; gap: .4rem; padding: .85rem .65rem; color: var(--muted); text-decoration: none; font-weight: 600; font-size: .95rem; border-bottom: 3px solid transparent; white-space: nowrap; }
+.tab svg { width: 20px; height: 20px; flex: none; }
+.tab[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tab:hover { color: var(--ink); }
+
+@media (max-width: 700px) {
+  .tabs { position: fixed; top: auto; bottom: 0; left: 0; right: 0; border-bottom: 0; border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .tabs .wrap { justify-content: space-between; gap: 0; padding-left: max(2px, env(safe-area-inset-left, 0px)); padding-right: max(2px, env(safe-area-inset-right, 0px)); }
+  .tab { flex: 1 0 auto; min-width: 0; flex-direction: column; gap: .1rem; padding: .5rem 1px .55rem; font-size: .64rem; border-bottom: 0; border-top: 3px solid transparent; }
+  .tab[aria-current="page"] { border-top-color: var(--accent); }
+  main { padding-bottom: 5.5rem; }
+}
+
+main .wrap { padding-block: 1.75rem 3rem; display: grid; gap: 2rem; }
+section.view { display: grid; gap: 1.9rem; }
+.stack { display: grid; gap: .9rem; align-content: start; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; flex-wrap: wrap; }
+.kicker { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sage); }
+.muted { color: var(--muted); }
+.small { font-size: .9rem; }
+
+.feature { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem; display: grid; gap: 1rem; box-shadow: 0 6px 24px -14px rgba(42,35,64,.35); }
+.feature .date { font-family: var(--font-display); font-size: 1.5rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { display: inline-flex; align-items: center; gap: .35rem; font-size: .82rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; background: var(--sage-soft); color: var(--sage); }
+.chip.warm { background: var(--accent-soft); color: var(--accent-ink); }
+.chip.live { background: var(--live); color: #fff; }
+.chip.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: pulse 1.6s infinite; }
+@keyframes pulse { 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .chip.live::before { animation: none; } }
+
+.times { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; }
+.times div { border-left: 3px solid var(--accent); padding-left: .7rem; }
+.times b { display: block; font-variant-numeric: tabular-nums; font-size: 1.05rem; }
+
+.btns { display: flex; flex-wrap: wrap; gap: .6rem; }
+.btn { display: inline-flex; align-items: center; gap: .45rem; padding: .65rem 1.1rem; border-radius: 10px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--accent); color: var(--accent-ink); background: transparent; cursor: pointer; font-family: inherit; }
+.btn.primary { background: var(--accent); color: #2a1a08; }
+.btn:hover { filter: brightness(1.05); }
+.btn svg { width: 18px; height: 18px; }
+
+.list { list-style: none; margin: 0; padding: 0; display: grid; }
+.list > li { padding: .9rem 0; border-top: 1px solid var(--line); display: grid; gap: .2rem; }
+.list > li:last-child { border-bottom: 1px solid var(--line); }
+.list .title { font-weight: 700; font-size: 1.05rem; }
+
+/* Order of service */
+.order { list-style: none; margin: 0; padding: 0; }
+.order li { display: grid; gap: .15rem; padding: .75rem 0; border-bottom: 1px dotted var(--line); }
+.order .part { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.order .who { font-size: 1.05rem; }
+.order .msg { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent-ink); }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.two > * { min-width: 0; }
+
+/* Pastor's letter */
+.letter { display: grid; gap: .8rem; max-width: 66ch; font-family: var(--font-scripture); font-size: 1.13rem; line-height: 1.65; }
+.letter .sig { font-style: italic; color: var(--accent-ink); }
+
+/* Scripture */
+.passage { display: grid; gap: .55rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.passage:last-child { border-bottom: 0; }
+.passage .scripture { font-family: var(--font-scripture); font-size: 1.22rem; line-height: 1.65; max-width: 62ch; }
+.passage sup { font-family: var(--font-body); font-size: .62em; color: var(--accent-ink); font-weight: 700; margin-right: .15em; }
+.scripture u { text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.version { font-size: .8rem; color: var(--muted); }
+
+/* Events */
+.event { display: grid; grid-template-columns: 64px 1fr; gap: 1rem; align-items: start; }
+.event > div { min-width: 0; }
+.dateblock { text-align: center; border-radius: 10px; background: var(--accent-soft); color: var(--accent-ink); padding: .4rem 0; font-variant-numeric: tabular-nums; }
+.dateblock .m { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.dateblock .d { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.1; }
+.dateblock.weekly { background: var(--sage-soft); color: var(--sage); }
+.dateblock.weekly .d { font-size: .95rem; padding: .3rem 0; font-family: var(--font-body); font-weight: 700; }
+
+/* Prayer */
+.pgroup { display: grid; gap: .5rem; }
+.pgroup h3 { display: flex; align-items: center; gap: .6rem; }
+.pgroup h3 .count { font-family: var(--font-body); font-size: .8rem; color: var(--muted); font-weight: 600; }
+.plist { list-style: none; margin: 0; padding: 0; display: grid; }
+.plist li { padding: .6rem 0; border-top: 1px solid var(--line); }
+.plist li:last-child { border-bottom: 1px solid var(--line); }
+.plist b { font-weight: 700; }
+.plist .rel { color: var(--muted); font-size: .92rem; }
+.banner { border-radius: 12px; padding: .9rem 1.1rem; background: var(--sage-soft); color: var(--ink); }
+.banner.rose { background: var(--rose-soft); }
+.banner strong { color: var(--sage); }
+.banner.rose strong { color: var(--rose); }
+.urgent h3 { color: var(--rose); }
+
+.banner.join { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.2rem; background: var(--accent-soft); }
+.banner.join strong { color: var(--accent-ink); }
+.banner.join > div { min-width: 0; flex: 1 1 260px; }
+
+/* Ministries */
+.mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.ministry { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem; display: grid; gap: .45rem; align-content: start; min-width: 0; }
+.ministry dl { margin: .3rem 0 0; display: grid; gap: .25rem; font-size: .92rem; }
+.ministry dl div { display: grid; grid-template-columns: 64px 1fr; gap: .5rem; }
+.ministry dt { color: var(--muted); font-weight: 600; }
+.ministry dd { margin: 0; }
+
+/* Editing tools (shown only to people who can edit) */
+.adminbar { border: 1.5px dashed var(--accent); border-radius: 12px; padding: .75rem 1rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; justify-content: space-between; font-size: .92rem; }
+.adminbar strong { color: var(--accent-ink); }
+.tools { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-top: .4rem; font-size: .88rem; }
+.tbtn { font: inherit; font-size: .82rem; font-weight: 700; padding: .2rem .65rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.tbtn.danger { color: var(--rose); border-color: var(--rose); }
+form.editor { display: grid; gap: .7rem; padding: 1.1rem; border: 1.5px solid var(--accent); border-radius: 12px; background: var(--surface); }
+form.editor label { display: grid; gap: .25rem; font-weight: 600; font-size: .9rem; }
+form.editor input, form.editor textarea { font: inherit; font-weight: 400; font-size: 1rem; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); width: 100%; min-width: 0; }
+form.editor .row, form.checker .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .7rem; }
+form.editor select, form.checker input { font: inherit; font-weight: 400; font-size: 1rem; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); width: 100%; min-width: 0; }
+form.checker { display: grid; gap: .7rem; padding: 1.1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+form.checker label { display: grid; gap: .25rem; font-weight: 600; font-size: .9rem; }
+.conflicts { border-radius: 10px; padding: .75rem 1rem; background: var(--rose-soft); color: var(--ink); font-size: .95rem; }
+.conflicts strong { color: var(--rose); }
+.conflicts ul { margin: .35rem 0; padding-left: 1.2rem; }
+.ok { border-radius: 10px; padding: .75rem 1rem; background: var(--sage-soft); }
+.ok strong { color: var(--sage); }
+.warn { color: var(--rose); font-weight: 600; }
+.dateblock.bk { background: var(--sage-soft); color: var(--sage); }
+.teaser { display: grid; gap: .3rem; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); text-decoration: none; }
+.teaser .t { font-family: var(--font-display); font-size: 1.25rem; }
+.teaser b { color: var(--accent-ink); }
+.teaser:hover { border-color: var(--accent); }
+.post { display: grid; gap: .6rem; }
+form.editor label.check { display: flex; align-items: center; gap: .5rem; }
+form.editor label.check input { width: 1.2rem; height: 1.2rem; }
+.draftnote { justify-self: start; font-size: .85rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; background: var(--warm, #f6e7cf); color: var(--accent-ink); }
+details.postd summary { padding: .2rem 0; }
+details.postd .post { margin-top: 1rem; }
+hr.sep { border: 0; border-top: 1px solid var(--line); margin: .5rem 0; width: 100%; }
+ul.bldg { list-style: none; margin: 0; padding: 0; display: grid; gap: .3rem; font-size: .95rem; }
+
+/* Faith & leadership */
+details { border-top: 1px solid var(--line); padding: .75rem 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 700; }
+ol.faith { margin: .6rem 0 0; padding-left: 1.3rem; display: grid; gap: .55rem; }
+ol.faith .refs { color: var(--rose); font-size: .9rem; }
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.2rem; margin-top: .6rem; }
+.people ul { list-style: none; margin: .3rem 0 0; padding: 0; }
+
+.copyrow { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.copyrow code { font-family: var(--font-body); font-weight: 600; user-select: all; }
+.sharelink { display: inline-flex; align-items: center; gap: .3rem; font-size: .85rem; font-weight: 700; color: var(--accent-ink); text-decoration: none; margin-top: .3rem; }
+.sharelink svg { width: 16px; height: 16px; }
+.sharetop { margin-bottom: 1.1rem; }
+.btn.sharebig { width: 100%; justify-content: center; font-size: 1.1rem; padding: .9rem 1rem; }
+button.sharelink { background: none; border: 0; padding: 0; font-family: inherit; cursor: pointer; }
+.sharepanel { flex-basis: 100%; display: grid; gap: .6rem; margin-top: .5rem; padding: 1rem; border: 1.5px solid var(--accent); border-radius: 12px; background: var(--surface); color: var(--ink); font-weight: 400; }
+.sharepanel textarea { font: inherit; font-size: 1rem; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); width: 100%; min-width: 0; resize: vertical; }
+.sharepanel .sharepic { display: block; width: 100%; max-width: 420px; height: auto; border-radius: 10px; -webkit-touch-callout: default; user-select: auto; }
+.sharepanel .picslot:empty { display: none; }
+.sharepanel .note { font-size: .92rem; color: var(--muted); }
+.copybtn { font: inherit; font-size: .82rem; font-weight: 700; padding: .25rem .6rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+ol.steps { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
+
+footer { color: var(--muted); font-size: .85rem; }
+footer .wrap { padding-block: 0 2rem; display: grid; gap: .3rem; }
+</style>
+
+<header class="hero" aria-label="Light in the Desert">
+  <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2f2558"></stop>
+        <stop offset=".45" stop-color="#7a4a7e"></stop>
+        <stop offset=".75" stop-color="#e2845a"></stop>
+        <stop offset="1" stop-color="#f6c178"></stop>
+      </linearGradient>
+      <radialGradient id="glow" cx=".72" cy=".86" r=".55">
+        <stop offset="0" stop-color="#fff2c4" stop-opacity=".95"></stop>
+        <stop offset=".25" stop-color="#ffd27a" stop-opacity=".55"></stop>
+        <stop offset="1" stop-color="#ffd27a" stop-opacity="0"></stop>
+      </radialGradient>
+    </defs>
+    <rect width="800" height="300" fill="url(#sky)"></rect>
+    <rect width="800" height="300" fill="url(#glow)"></rect>
+    <circle cx="576" cy="250" r="34" fill="#fff4d2"></circle>
+    <path d="M0 238 L70 214 L130 226 L210 190 L270 206 L330 182 L400 210 L470 196 L540 222 L620 200 L700 218 L800 196 L800 300 L0 300 Z" fill="#8a4f6a" opacity=".75"></path>
+    <path d="M0 262 L90 246 L180 256 L260 240 L360 258 L460 248 L560 262 L660 250 L800 258 L800 300 L0 300 Z" fill="#4a2f52"></path>
+    <g fill="none" stroke="#2b1c36" stroke-linecap="round">
+      <path d="M150 300 L152 236" stroke-width="7"></path>
+      <path d="M152 238 L150 196 M152 238 L134 204 M152 238 L170 204 M152 238 L122 216 M152 238 L182 216 M152 238 L114 232 M152 238 L190 230 M152 238 L141 198 M152 238 L162 198" stroke-width="3.2"></path>
+      <path d="M150 196 L149 150" stroke-width="2.2"></path>
+      <path d="M149 150 C146 160 152 160 149 170" stroke-width="5"></path>
+      <path d="M712 262 L712 176" stroke-width="13"></path>
+      <path d="M712 226 L694 226 L694 196 M712 214 L730 214 L730 186" stroke-width="9" stroke-linejoin="round"></path>
+    </g>
+    <g fill="#2b1c36"><circle cx="146" cy="154" r="3"></circle><circle cx="152" cy="158" r="3"></circle><circle cx="147" cy="163" r="3"></circle><circle cx="151" cy="167" r="2.6"></circle></g>
+    <g fill="#2b1c36"><rect x="616" y="150" width="9" height="104"></rect><rect x="596" y="174" width="49" height="9"></rect></g>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Southern Baptist Church of Yucca, Arizona</span>
+    <h1>Light in the Desert</h1>
+    <p class="verse">“The desert shall rejoice, and blossom as the rose.” Isaiah 35:1</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections"><div class="wrap" id="tabs"></div></nav>
+
+<main><div class="wrap" id="views"></div></main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script type="application/json" id="litd-data">{"posts":[{"id":"p1","date":"2026-11-22","title":"Why Do We Give Thanks?","verse":"Philippians 4:6–7","body":"In the fall of 1621, after a harsh winter that killed over half of the original Mayflower passengers, the remaining group chose to celebrate their harvest and thank God for all that He had done for them. How “unhuman” of them to stop in the midst of all their daily struggles and massive losses and thank the God that had brought them to this harsh new land.\n\nThe human condition is most often filled with stress and fatigue. However, these new settlers knew something that many of us often forget: thanking God is a blessing that heals that human condition. Thanking God is for “our” benefit, not for God.\n\nThroughout scripture God instructs us not only to worship Him, but to thank Him. We are to thank Him for both the good and the bad. Thanking God shifts our focus from worries to His faithfulness. God tells us in Romans 8 that He can cause all things to work for good. Trusting and thanking Him actually guards our hearts and minds from all anxiety.\n\nThus, the message today will focus on the many benefits of simply saying, “Thank You God.”"}],"bookings":[],"events":[{"id":"e0","date":"2026-11-22","time":"After church","title":"Shoe boxes go out","where":"At the church","note":""},{"id":"e1","date":"2026-11-24","time":"","start":"18:30","end":"20:00","title":"Celebrate Recovery","where":"At the church","note":"With Pastor Bill Reasons"},{"id":"e2","date":"2026-11-26","time":"","title":"Thanksgiving Day","where":"","note":"Give thanks with family and friends."},{"id":"e3","date":"2026-12-05","time":"8:00 AM","title":"Men's Fellowship","where":"At the church","note":""},{"id":"e4","date":"2026-12-12","time":"10:00 AM","title":"Women's Fellowship","where":"At the church","note":""}],"announcements":[{"id":"mwsioboyl8se","title":"New Connector!","body":"Stay connected to your church. This tool will keep you informed and never in the dark about fellowship opportunities."},{"id":"a1","title":"Shoe boxes leave after church today","body":"Thank you to everyone who packed a shoe box this year."},{"id":"a2","title":"American Legion Auxiliary Toy Drive","body":"The ALA Toy Drive is running now. Bring new, unwrapped toys for local children."},{"id":"a3","title":"Celebrate Recovery this Tuesday","body":"Tuesday, November 24 at 6:30 PM at the church with Pastor Bill Reasons."},{"id":"a4","title":"Happy Thanksgiving!","body":"“In everything give thanks; for this is the will of God in Christ Jesus for you.” 1 Thessalonians 5:18"}],"prayer":{"praise":"All our church family are home from the hospital. Pray it stays that way, please.","nation":"Pray for Israel, our military, our country, our leaders and all first responders.","all":"Pray for ALL our church family struggling with tired, painful bodies. Jesus is our strength!","groups":{}},"kids":[],"blog":[]}</script>
+
+<script>
+/* ============================================================
+   CHURCH INFO: changes rarely.
+   ============================================================ */
+const CHURCH = {
+  name: "Light in the Desert – Southern Baptist Church of Yucca",
+  address: "12320 S. 3rd Street, Yucca, AZ 86438",
+  mail: "P.O. Box 7, Yucca, AZ 86438",
+  phone: "928-377-1016",
+  cell: "",
+  email: "pastorbasye@gmail.com",
+  facebookUrl: "https://www.facebook.com/groups/218526316029915",
+  youtubeUrl: "https://www.youtube.com/channel/UCalsVJcLXegbD0O24xtia7A/streams",
+  websiteUrl: "https://yucca.church/",
+  pastorsDeskUrl: "https://yucca.church/from-the-pastors-desk/",
+  whatsappUrl: "https://chat.whatsapp.com/KVgOVe43svoAdfNT2nUyrd",  // the church WhatsApp group invite link; clear it to hide the Join button
+  ministries: [
+    { name: "Sunday Morning Service", kind: "Worship", when: "Sundays, 10:15 AM", who: "Pastor Wayne Basye", what: "Worship, music and the message. In person, or live on Facebook." },
+    { name: "Adult Bible Study", kind: "Grow", when: "Sundays, 8:45 AM", who: "Pastor Don Wilson", what: "Study the Bible together before the service." },
+    { name: "Children's Ministry", kind: "Kids", when: "Sundays, 10:15 AM", who: "Janice Gould", what: "Bible lessons for children during the Sunday service." },
+    { name: "Wednesday Bible Study", kind: "Grow", when: "Wednesdays, 6:00 PM", who: "Pastor Wayne Basye", what: "Working through the Old Testament. Also live on Facebook." },
+    { name: "Celebrate Recovery", kind: "Recovery", when: "Tuesdays, 6:30 PM", who: "Pastor Bill Reasons", what: "A Christ-centered recovery program for hurts, habits and hang-ups. Meets at the church." },
+    { name: "Restored to Hope", kind: "Recovery", when: "Ask for details", who: "Pastor Bill Reasons", what: "Pastor Bill's ministry of restoration and hope. Ask him how to be part of it." },
+    { name: "Men's Fellowship", kind: "Fellowship", when: "1st Saturday, 8:00 AM", who: "At the church", what: "Men gathering for fellowship, food and encouragement." },
+    { name: "Women's Fellowship", kind: "Fellowship", when: "2nd Saturday, 10:00 AM", who: "At the church", what: "Women gathering for fellowship and encouragement." },
+    { name: "Worship Team & Special Music", kind: "Serve", when: "Sunday mornings", who: "Ask Pastor Wayne", what: "Sing or play with the worship team. New voices are welcome." },
+    { name: "Yucca Pantry", kind: "Serve", when: "Volunteers needed", who: "Ask at church", what: "Help keep food on our neighbors' tables. The Pantry needs more volunteers." },
+    { name: "American Legion Post 136 & Auxiliary Unit 136", kind: "Community", when: "Toy Drive running now", who: "Ask at church", what: "Helping veterans, families and the community. Bring new, unwrapped toys for the Toy Drive." },
+    { name: "Prayer Ministry", kind: "Pray", when: "Any time", who: "Pastor Wayne & Sandi", what: "Send a prayer request or join in praying through the weekly prayer list." }
+  ],
+  // Livestream windows, Arizona time (MST all year). day: 0 = Sunday, 3 = Wednesday
+  liveWindows: [{ day: 0, start: "10:15", end: "11:45" }, { day: 3, start: "18:00", end: "19:30" }],
+  weekly: [
+    { day: "Sun", time: "8:45 AM", title: "Adult Bible Study", who: "Pastor Don Wilson" },
+    { day: "Sun", time: "10:15 AM", title: "Sunday Morning Service", who: "Pastor Wayne Basye · Facebook Live" },
+    { day: "Sun", time: "10:15 AM", title: "Children's Ministry", who: "Janice Gould" },
+    { day: "Tue", time: "6:30 PM", title: "Celebrate Recovery", who: "Pastor Bill Reasons · at the church" },
+    { day: "Wed", time: "6:00 PM", title: "Wednesday Bible Study: Old Testament", who: "Pastor Wayne Basye · Facebook Live" }
+  ],
+  monthly: [
+    { day: "1st Sat", time: "8:00 AM", title: "Men's Fellowship", who: "At the church" },
+    { day: "2nd Wed", time: "3:00 PM", title: "Board of Directors Meeting", who: "At the church" },
+    { day: "2nd Sat", time: "10:00 AM", title: "Women's Fellowship", who: "At the church" }
+  ],
+  // When church gatherings use the building, for double-booking checks. dow: 0 = Sunday … 6 = Saturday; nth: which week of the month.
+  // Every church gathering uses the whole building.
+  uses: [
+    { title: "Sunday Bible Study & Worship", dow: 0, start: "08:30", end: "12:30", room: "Whole building" },
+    { title: "Celebrate Recovery", dow: 2, start: "18:30", end: "20:30", room: "Whole building" },
+    { title: "Wednesday Bible Study", dow: 3, start: "18:00", end: "20:00", room: "Whole building" },
+    { title: "Board of Directors Meeting", dow: 3, nth: 2, start: "15:00", end: "16:30", room: "Whole building" },
+    { title: "Men's Fellowship", dow: 6, nth: 1, start: "08:00", end: "10:00", room: "Whole building" },
+    { title: "Women's Fellowship", dow: 6, nth: 2, start: "10:00", end: "12:00", room: "Whole building" }
+  ],
+  officers: ["Pastor/President – Wayne Basye", "Assistant Pastor – Don Wilson", "Treasurer – Barbara Webber", "Secretary – Sandi Basye"],
+  deacons: ["Perry Andresen", "Glen Baird", "Don Bosdell", "Ron Gould", "James Letts", "Paul Parmenter", "Chris Steele"],
+  board: ["Laura Ackerson", "Perry Andresen", "Sherry Bosdell", "Michael Faatz", "Marilee Letts", "Inez Muela", "Betty Noel", "Marshall Pesch", "Chris Steele"],
+  faith: [
+    ["We believe the Holy Bible is the inspired and inerrant Word of God, the all sufficient authority in matters of faith, doctrine and Christian living.", "2 Timothy 3:16"],
+    ["We believe in one God, eternally existing in three persons: the Father, the Son and the Holy Spirit.", "Matthew 28:19; John 1:1"],
+    ["We believe in the virgin birth of Jesus Christ, that He is true God and true man, and that He died on the cross for our sins.", "Luke 1:34"],
+    ["We believe that Jesus rose bodily from the dead, ascended into heaven where He sits at the right hand of the Father and is now our High Priest and advocate.", "John 2:19"],
+    ["We believe that man was created in the image of God but fell into sin and is therefore lost. Only through regeneration by the work of the Holy Spirit can man's salvation and spiritual life be obtained.", "Genesis 5:3; Genesis 1:27"],
+    ["We believe that eternal salvation is the free gift from God, entirely apart from man's works, and is possessed by any and all who have faith and receive Jesus Christ as their personal Lord and Savior.", "Ephesians 2:8; Galatians 3:1–9"],
+    ["We believe that baptism is by immersion and the Lord's Supper is a memorial to suffering and death on a cross. These are ordinances to be observed by the church in its present age. They are not to be regarded as a means for man's salvation.", "Acts 8:38–39; 1 Corinthians 11:17–34"],
+    ["We believe in the personal, bodily, imminent and glorious return of the Lord Jesus Christ. We believe that He will come first for His church, which inspires believers for a dynamic and zealous life of service for Him while waiting for His return.", "1 Thessalonians 4:16–18"],
+    ["We believe in the bodily resurrection of the dead, the everlasting blessedness of the saved in heaven and the everlasting punishment and separation from God of the unsaved in hell.", "Daniel 12:1–3; Revelation 20:11–12; 1 Corinthians 15:29–58; John 14:2"],
+    ["We believe in the autonomy of the local church. The church shall manage its own affairs and shall not be subject to any other religious body or organization.", ""]
+  ]
+};
+
+/* ============================================================
+   THIS WEEK'S BULLETIN: replace this block each week.
+   In scripture text, [[double brackets]] are underlined.
+   ============================================================ */
+const WEEK = {
+  date: "Sunday, November 22, 2026",
+  season: "Thanksgiving",
+  sermon: { title: "Why Do We Give Thanks?", preacher: "Pastor Wayne Basye" },
+  order: [
+    { part: "Opening Prayer", who: "Pastor Wayne Basye" },
+    { part: "Worship Team & Special Music", who: "Laura Ackerson, Perry Andresen, Cari Everett, Susie Gould, Helen Hammond, Barbara Hitzel, Robert Hooper, Steve Solomen, Linda Wilson" },
+    { part: "Announcements", who: "Deacons Perry Andresen & Jim Letts" },
+    { part: "Prayer for the Message", who: "Pastor Don Wilson" },
+    { part: "Today's Message", who: "Pastor Wayne Basye", msg: "Why Do We Give Thanks?" }
+  ],
+  scriptureVersion: "New King James Version (NKJV)",
+  scripture: [
+    { ref: "Philippians 4:4–7", link: "https://www.bible.com/bible/114/PHP.4.NKJV",
+      verses: [[4, "Rejoice in the Lord always. Again I will say, rejoice!"], [5, "Let your gentleness be known to all men. The Lord is at hand."],
+               [6, "Be anxious for nothing, but in everything by prayer and supplication, [[with thanksgiving]], let your requests be made known to God;"],
+               [7, "and the peace of God, which surpasses all understanding, will guard your hearts and minds through Christ Jesus."]] },
+    { ref: "Matthew 6:9–10", link: "https://www.bible.com/bible/114/MAT.6.NKJV",
+      verses: [[9, "In this manner, therefore, pray: Our Father in heaven, Hallowed be Your name."], [10, "Your kingdom come. Your will be done On earth as it is in heaven."]] },
+    { ref: "1 Thessalonians 5:16–18", link: "https://www.bible.com/bible/114/1TH.5.NKJV",
+      verses: [[16, "Rejoice always,"], [17, "pray without ceasing,"], [18, "in [[everything give thanks]]; for this is the will of God in Christ Jesus for you."]] },
+    { ref: "Psalm 100:4", link: "https://www.bible.com/bible/114/PSA.100.NKJV",
+      verses: [[4, "[[Enter into His gates with thanksgiving]], And into His courts with praise. [[Be thankful to Him]], and bless His name."]] },
+    { ref: "Psalm 51:10", link: "https://www.bible.com/bible/114/PSA.51.NKJV",
+      verses: [[10, "Create in me a clean heart, O God, And renew a steadfast spirit within me."]] },
+    { ref: "Ezekiel 36:26", link: "https://www.bible.com/bible/114/EZK.36.NKJV",
+      verses: [[26, "I will give you a new heart and put a new spirit within you; I will take the heart of stone out of your flesh and give you a heart of flesh."]] },
+    { ref: "Isaiah 64:8", link: "https://www.bible.com/bible/114/ISA.64.NKJV",
+      verses: [[8, "But now, O LORD, You are our Father; We are the clay, and You our potter; And all we are the work of Your hand."]] }
+  ],
+  memoryVerse: { text: "Rejoice always, pray without ceasing, in everything give thanks; for this is the will of God in Christ Jesus for you.", ref: "1 Thessalonians 5:16–18 NKJV" },
+  // Prayer list now lives in the saved data (DATA.prayer) so editors can change it from the app.
+  sponsor: "This week's bulletin is compliments of Darin & Athena Pantekoek."
+};
+/* ============================================================ */
+
+const ICONS = {
+  home: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
+  bulletin: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/>',
+  scripture: '<path d="M4 5c3-1 6-1 8 1v14c-2-2-5-2-8-1zM20 5c-3-1-6-1-8 1v14c2-2 5-2 8-1z"/>',
+  prayer: '<path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/>',
+  events: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  involved: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 14.2c3 .2 5.5 2.6 5.5 5.8"/>',
+  watch: '<rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10 9l5 2.5-5 2.5z"/><path d="M8 21h8"/>',
+  pastor: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+  connect: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 14.2c3 .2 5.5 2.6 5.5 5.8"/>',
+  about: '<path d="M12 3v18M7 8h10"/>',
+  standing: '<path d="M12 3v18M7 8h10"/>',
+  kids: '<circle cx="8" cy="6" r="2.3"/><circle cx="16.5" cy="8" r="1.9"/><path d="M4.5 20v-4.5a3.5 3.5 0 0 1 7 0V20M13.5 20v-3.5a3 3 0 0 1 6 0V20"/>',
+  play: '<path d="M8 5l11 7-11 7z"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  share: '<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12M8 7l4-4 4 4"/>',
+  phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+  text: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>'
+};
+const icon = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${ICONS[n]}</svg>`;
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+/* Share by text: uses the phone's share sheet when it can, otherwise opens a text message. */
+/* PUBLIC COPY: public address. Every Share by text message uses it. */
+const PUBLIC_URL = "https://rchoop.github.io/Light-in-the-Desert/";
+const PAGE_URL = PUBLIC_URL;
+const IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const smsBody = (to, body) => "sms:" + to + (body ? (IOS ? "&body=" : "?body=") + encodeURIComponent(body) : "");
+const shareMsg = (t, after) => t + " " + PAGE_URL + (after ? " " + after : "");
+const smsHref = (t, after) => smsBody("", shareMsg(t, after));
+const shareBtn = (text, label, cls, after = "") => `<button type="button" class="${cls}" data-share="${esc(text)}"${after ? ` data-after="${esc(after)}"` : ""} aria-expanded="false">${icon("share")}${esc(label)}</button>`;
+const waLine = () => CHURCH.whatsappUrl ? "Join our WhatsApp group: " + CHURCH.whatsappUrl : "";
+const textHref = (body) => smsBody(CHURCH.cell.replace(/[^0-9]/g, ""), body);
+/* Public copy: no cell number. These buttons call the church office instead. */
+const textPastor = (body, cls = "btn primary") => `<a class="${cls}" href="tel:${esc(CHURCH.phone.replace(/[^0-9]/g, ""))}">${icon("phone")}Call the church office</a>`;
+const emailPastor = (subject) => `<a class="btn" href="${esc("mailto:" + CHURCH.email + (subject ? "?subject=" + encodeURIComponent(subject) : ""))}" target="_blank" rel="noopener">${icon("mail")}Email</a>`;
+const linkBtn = (url, label, cls = "", ic = "link") => `<a class="btn ${cls}" href="${esc(url)}" target="_blank" rel="noopener">${icon(ic)}${esc(label)}</a>`;
+
+const TABS = [["home", "Home"], ["bulletin", "Bulletin"], ["scripture", "Scripture"], ["prayer", "Prayer"], ["events", "Events"], ["pastor", "Pastor"], ["kids", "Children"], ["standing", "Blog"], ["connect", "Connect"]];
+const groupme = () => `<div class="banner join"><div><strong>Never miss church news.</strong> Get the weekly email: send your name to ${esc(CHURCH.email)} and ask to join the list.${CHURCH.whatsappUrl ? " Or join our WhatsApp group." : ""}</div>${CHURCH.whatsappUrl ? linkBtn(CHURCH.whatsappUrl, "Join on WhatsApp", "primary") : ""}</div>`;
+
+/* Live status in Arizona time (UTC-7 all year) */
+function liveStatus() {
+  const az = new Date(Date.now() - 7 * 3600 * 1000);
+  const day = az.getUTCDay(), mins = az.getUTCHours() * 60 + az.getUTCMinutes();
+  const toMin = (t) => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+  return CHURCH.liveWindows.some(w => w.day === day && mins >= toMin(w.start) - 10 && mins <= toMin(w.end));
+}
+
+/* ---------- Events & announcements that editors can change from the app ---------- */
+const DATA = JSON.parse(document.getElementById("litd-data").textContent);
+const SRC = {
+  style: document.getElementById("app-style").textContent,
+  header: document.querySelector("header.hero").outerHTML,
+  script: document.currentScript.textContent
+};
+const RESET = (() => {
+  const s = [...document.head.querySelectorAll("style")].find(x => /safe-area/.test(x.textContent));
+  return s ? s.textContent : ":root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}";
+})();
+const CLOSE = "</" + "script>";
+function pageHtml(data) {
+  const json = JSON.stringify(data).replace(/</g, "\\u003c");
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + RESET + '</style></head><body>'
+    + '<title>Light in the Desert</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+    + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Source+Sans+3:wght@400;600;700&family=Alegreya:ital,wght@0,400;1,400&display=swap">\n'
+    + '<style id="app-style">' + SRC.style + '</style>\n\n' + SRC.header + '\n\n'
+    + '<nav class="tabs" aria-label="Sections"><div class="wrap" id="tabs"></div></nav>\n\n<main><div class="wrap" id="views"></div></main>\n\n<footer><div class="wrap" id="foot"></div></footer>\n\n'
+    + '<script type="application/json" id="litd-data">' + json + CLOSE + '\n\n<script>' + SRC.script + CLOSE + '\n</body></html>';
+}
+
+let ART = null, admin = false, saving = false, editing = null, confirmDel = null, msg = "";
+const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const todayAZ = () => new Date(Date.now() - 7 * 3600 * 1000).toISOString().slice(0, 10);
+const upcoming = () => DATA.events.filter(e => e.date >= todayAZ()).sort((a, b) => a.date.localeCompare(b.date));
+const isEditing = (kind, id) => admin && editing && editing.kind === kind && editing.id === id;
+const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+function itemTools(kind, item) {
+  if (!admin) return "";
+  if (confirmDel && confirmDel.kind === kind && confirmDel.id === item.id)
+    return `<div class="tools"><span>Delete “${esc(item.title)}”?</span><button class="tbtn danger" data-act="del-yes" data-kind="${kind}" data-id="${esc(item.id)}">Delete</button><button class="tbtn" data-act="cancel">Keep it</button></div>`;
+  return `<div class="tools"><button class="tbtn" data-act="edit" data-kind="${kind}" data-id="${esc(item.id)}">Edit</button><button class="tbtn danger" data-act="del" data-kind="${kind}" data-id="${esc(item.id)}">Delete</button></div>`;
+}
+const eventForm = (e = {}) => `
+  <form class="editor" data-kind="event" data-id="${esc(e.id || "")}">
+    <h3>${e.id ? "Edit event" : "Add an event"}</h3>
+    <label>Title<input id="ev-title" required maxlength="80" value="${esc(e.title || "")}" placeholder="Church potluck"></label>
+    <div class="row"><label>Date<input id="ev-date" type="date" required value="${esc(e.date || "")}"></label><label>Starts<input id="ev-start" type="time" value="${esc(e.start || parseTime(e.time))}"></label><label>Ends<input id="ev-end" type="time" value="${esc(e.end || "")}"></label></div>
+    ${e.time && !e.start && !parseTime(e.time) ? `<p class="muted small">Time now shown: “${esc(e.time)}”. It stays unless you pick a start time.</p>` : ""}
+    <label>Place<input id="ev-where" maxlength="80" value="${esc(e.where || "")}" placeholder="At the church"></label>
+    <label>Note (optional)<textarea id="ev-note" rows="2" maxlength="300">${esc(e.note || "")}</textarea></label>
+    <p class="warn" id="ev-warn" role="alert" hidden></p>
+    <div class="conflicts" id="ev-conf" role="alert" hidden></div>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Save event</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>`;
+const annForm = (a = {}) => `
+  <form class="editor" data-kind="ann" data-id="${esc(a.id || "")}">
+    <h3>${a.id ? "Edit announcement" : "Add an announcement"}</h3>
+    <label>Headline<input id="an-title" required maxlength="90" value="${esc(a.title || "")}" placeholder="Choir practice moved to Thursday"></label>
+    <label>Details<textarea id="an-body" rows="3" maxlength="500">${esc(a.body || "")}</textarea></label>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Save announcement</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>`;
+function addArea(kind) {
+  if (!admin) return "";
+  if (COLS[kind]) return isEditing(kind, null) ? colForm(kind) : `<div class="btns"><button class="btn" data-act="add" data-kind="${kind}">+ ${esc(COLS[kind].add)}</button></div>`;
+  if (isEditing(kind, null)) return kind === "event" ? eventForm() : kind === "book" ? bookForm() : kind === "post" ? postForm() : annForm();
+  return `<div class="btns"><button class="btn" data-act="add" data-kind="${kind}">+ ${kind === "event" ? "Add event" : kind === "book" ? "Add community group" : kind === "post" ? "Write a new post" : "Add announcement"}</button></div>`;
+}
+const adminBar = () => admin ? `<div class="adminbar" role="status"><span><strong>Editing is on for you.</strong> Members see your changes as soon as you save.</span>${msg ? `<span>${esc(msg)}</span>` : ""}</div>` : "";
+
+function eventRow(e, tools) {
+  const [y, m, d] = e.date.split("-").map(Number);
+  const wd = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
+  const when = [wd, evTime(e)].filter(Boolean).join(", ") + (e.where ? " · " + e.where : "");
+  return `<li class="event"><div class="dateblock"><div class="m">${MON[m - 1]}</div><div class="d">${d}</div></div>
+    <div><div class="title">${esc(e.title)}</div><div class="muted small">${esc(when)}</div>${e.note ? `<div class="small">${esc(e.note)}</div>` : ""}${shareBtn(`Join us at Light in the Desert, Yucca: ${e.title}, ${new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" })}${evTime(e) ? ", " + evTime(e) : ""}${e.where ? ", " + e.where : ""}.`, "Share by text", "sharelink")}${tools ? itemTools("event", e) : ""}</div></li>`;
+}
+function annList() {
+  const items = DATA.announcements.map(a => isEditing("ann", a.id) ? `<li>${annForm(a)}</li>`
+    : `<li><span class="title">${esc(a.title)}</span><span class="muted">${esc(a.body)}</span>${itemTools("ann", a)}</li>`).join("");
+  return `${addArea("ann")}<ul class="list">${items || '<li class="muted">No announcements right now.</li>'}</ul>`;
+}
+
+/* ---------- Building use by community groups ---------- */
+DATA.bookings = DATA.bookings || [];
+const ROOMS = ["Whole building", "Sanctuary", "Fellowship Room", "Kitchen", "Children's Ministry Building"];
+const DOW = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const toMin = (t) => { const [h, m] = String(t || "0:0").split(":").map(Number); return h * 60 + (m || 0); };
+const fmtTime = (t) => { if (!t) return ""; let [h, m] = t.split(":").map(Number); const ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return `${h}:${String(m).padStart(2, "0")} ${ap}`; };
+const fmtRange = (a, b) => `${fmtTime(a)}–${fmtTime(b)}`;
+/* Event times: new events store start/end ("18:30"); older ones keep a free-text time. */
+function parseTime(t) {
+  const m = String(t || "").trim().toLowerCase().match(/^(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?|noon)?$/);
+  if (!m) return "";
+  let h = +m[1]; const min = +(m[2] || 0), ap = m[3] || "";
+  if (h > 23 || min > 59) return "";
+  if (ap.startsWith("p") && h < 12) h += 12;
+  if (ap.startsWith("a") && h === 12) h = 0;
+  return `${String(h).padStart(2, "0")}:${String(min).padStart(2, "0")}`;
+}
+const evTime = (e) => e.start ? (e.end ? fmtRange(e.start, e.end) : fmtTime(e.start)) : (e.time || "");
+const dUTC = (iso) => { const [y, m, d] = iso.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
+const addDays = (iso, n) => new Date(dUTC(iso).getTime() + n * 86400000).toISOString().slice(0, 10);
+const dowOf = (iso) => dUTC(iso).getUTCDay();
+const fmtDay = (iso) => dUTC(iso).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
+const sameRoom = (a, b) => { const x = (a || "").trim().toLowerCase(), y = (b || "").trim().toLowerCase(); return !x || !y || x === y || x === "whole building" || y === "whole building"; };
+const overlaps = (s1, e1, s2, e2) => toMin(s1) < toMin(e2) && toMin(s2) < toMin(e1);
+const occursOn = (b, iso) => b.repeat === "weekly" ? iso >= b.date && (!b.until || iso <= b.until) && dowOf(iso) === dowOf(b.date) : iso === b.date;
+function occurrences(b) {
+  if (b.repeat !== "weekly") return [b.date];
+  const out = [], end = b.until || addDays(b.date, 364);
+  for (let d = b.date; d <= end && out.length < 60; d = addDays(d, 7)) out.push(d);
+  return out;
+}
+const churchUseOn = (u, iso) => dowOf(iso) === u.dow && (!u.nth || Math.ceil(dUTC(iso).getUTCDate() / 7) === u.nth);
+/* A clash is "hard" when both times are known and overlap; "soft" when an event has no end time to compare. */
+const sameTitle = (a, b) => { const x = String(a || "").trim().toLowerCase(), y = String(b || "").trim().toLowerCase(); return !!x && !!y && (x.includes(y) || y.includes(x)); };
+function clashList(b, opt = {}) {
+  const out = [];
+  for (const d of occurrences(b)) {
+    if (d < todayAZ()) continue;
+    for (const o of DATA.bookings) if (o.id !== opt.booking && occursOn(o, d) && sameRoom(o.room, b.room) && overlaps(o.start, o.end, b.start, b.end))
+      out.push({ text: `${fmtDay(d)}: ${o.group}, ${fmtRange(o.start, o.end)}${o.room ? " · " + o.room : ""}` });
+    const timed = DATA.events.filter(e => e.date === d && e.id !== opt.event && e.start && e.end);
+    for (const u of CHURCH.uses) if (churchUseOn(u, d) && sameRoom(u.room, b.room) && overlaps(u.start, u.end, b.start, b.end)
+      && !sameTitle(u.title, opt.title) && !timed.some(e => sameTitle(e.title, u.title)))
+      out.push({ text: `${fmtDay(d)}: ${u.title} (church), about ${fmtRange(u.start, u.end)}` });
+    for (const e of DATA.events) if (e.date === d && e.id !== opt.event) {
+      if (e.start && e.end) { if (overlaps(e.start, e.end, b.start, b.end)) out.push({ text: `${fmtDay(d)}: ${e.title} (church event), ${fmtRange(e.start, e.end)}` }); }
+      else if (opt.event === undefined) out.push({ soft: true, text: `${fmtDay(d)}: ${e.title} (church event${evTime(e) ? ", " + evTime(e) : ""}). Check the times.` });
+    }
+    if (out.length >= 8) break;
+  }
+  return out;
+}
+const findConflicts = (b, ignoreId) => clashList(b, { booking: ignoreId }).map(c => c.text);
+const isActive = (b) => b.repeat === "weekly" ? (!b.until || b.until >= todayAZ()) : b.date >= todayAZ();
+function activeBookings() {
+  const list = DATA.bookings.filter(isActive);
+  const w = list.filter(b => b.repeat === "weekly").sort((a, b) => dowOf(a.date) - dowOf(b.date) || toMin(a.start) - toMin(b.start));
+  const o = list.filter(b => b.repeat !== "weekly").sort((a, b) => a.date.localeCompare(b.date) || toMin(a.start) - toMin(b.start));
+  return [...w, ...o];
+}
+function bookingRow(b) {
+  const weekly = b.repeat === "weekly", day = DOW[dowOf(b.date)];
+  const [, m, d] = b.date.split("-").map(Number);
+  const block = weekly ? `<div class="dateblock weekly"><div class="d">${day.slice(0, 3)}</div></div>` : `<div class="dateblock bk"><div class="m">${MON[m - 1]}</div><div class="d">${d}</div></div>`;
+  const when = weekly ? `Every ${day}, ${fmtRange(b.start, b.end)}${b.date > todayAZ() ? ` · starts ${fmtDay(b.date)}` : ""}${b.until ? ` · until ${fmtDay(b.until)}` : ""}`
+    : `${day}, ${fmtRange(b.start, b.end)}`;
+  return `<li class="event">${block}<div><div class="title">${esc(b.group)}</div><div class="muted small">${esc(when)}${b.room ? " · " + esc(b.room) : ""}</div>${b.note ? `<div class="small">${esc(b.note)}</div>` : ""}${admin && b.contact ? `<div class="small muted">Contact: ${esc(b.contact)}</div>` : ""}${itemTools("book", { id: b.id, title: b.group })}</div></li>`;
+}
+const roomList = `<datalist id="rooms">${ROOMS.map(r => `<option value="${r}"></option>`).join("")}</datalist>`;
+const bookForm = (b = {}) => `
+  <form class="editor" data-kind="book" data-id="${esc(b.id || "")}">
+    <h3>${b.id ? "Edit community group" : "Add a community group"}</h3>
+    <label>Group name<input id="bk-group" required maxlength="80" value="${esc(b.group || "")}" placeholder="Yucca Quilting Circle"></label>
+    <div class="row"><label>Date${b.repeat === "weekly" ? " (first meeting)" : ""}<input id="bk-date" type="date" required value="${esc(b.date || "")}"></label><label>Starts<input id="bk-start" type="time" required value="${esc(b.start || "")}"></label><label>Ends<input id="bk-end" type="time" required value="${esc(b.end || "")}"></label></div>
+    <div class="row"><label>Room<input id="bk-room" list="rooms" maxlength="40" value="${esc(b.room || "")}" placeholder="Fellowship Room"></label>
+      <label>Repeats<select id="bk-repeat"><option value="none">One time</option><option value="weekly"${b.repeat === "weekly" ? " selected" : ""}>Every week</option></select></label>
+      <label>Last date (weekly)<input id="bk-until" type="date" value="${esc(b.until || "")}"></label></div>
+    <label>Contact person (only editors see this)<input id="bk-contact" maxlength="80" value="${esc(b.contact || "")}" placeholder="Name and phone"></label>
+    <label>Note for members (optional)<textarea id="bk-note" rows="2" maxlength="300">${esc(b.note || "")}</textarea></label>
+    <div class="conflicts" hidden></div>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Save booking</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>${roomList}`;
+const checker = () => `
+  <form class="checker" id="check-form">
+    <h3>Is the building free?</h3>
+    <p class="muted small">Check a date and time before promising the building to anyone.</p>
+    <div class="row"><label>Date<input id="ck-date" type="date" required value="${todayAZ()}"></label><label>Starts<input id="ck-start" type="time" required value="18:00"></label><label>Ends<input id="ck-end" type="time" required value="20:00"></label><label>Room<input id="ck-room" list="rooms" maxlength="40" placeholder="Any room"></label></div>
+    <div class="btns"><button class="btn" type="submit">Check</button></div>
+    <div id="check-out" role="status"></div>
+  </form>${roomList}`;
+function bldgWeek() {
+  const t = todayAZ(), out = [];
+  for (let i = 0; i < 7; i++) { const d = addDays(t, i); for (const b of DATA.bookings) if (occursOn(b, d)) out.push(`<li><b>${esc(fmtDay(d))}</b> · ${esc(b.group)}, ${esc(fmtRange(b.start, b.end))}${b.room ? " · " + esc(b.room) : ""}</li>`); }
+  return out.length ? `<div class="stack" style="gap:.4rem;margin-top:.5rem"><span class="kicker">In our building this week</span><ul class="bldg">${out.join("")}</ul><a href="#events" class="small">Building calendar</a></div>` : "";
+}
+/* ---------- Prayer list that editors can change ---------- */
+DATA.prayer = DATA.prayer || { praise: "", nation: "", all: "", groups: {} };
+DATA.prayer.groups = DATA.prayer.groups || {};
+const PR = () => DATA.prayer;
+const PGROUPS = [["passing", "Recent passing", ""], ["urgent", "Urgent", "urgent"], ["also", "Also pray for", ""], ["community", "Our country & community", ""], ["special", "Special prayers", ""]];
+const PBANNERS = { praise: "Praise report", nation: "Prayer for our nation", all: "Prayer for all our church family" };
+const prayForm = (g, it = {}) => `
+  <form class="editor" data-kind="pray" data-group="${esc(g)}" data-id="${esc(it.id || "")}">
+    <h3>${it.id ? "Edit prayer request" : "Add a prayer request"}</h3>
+    <div class="row"><label>Name<input id="pr-name" required maxlength="100" value="${esc(it.name || "")}" placeholder="Jane Smith"></label><label>Relation (optional)<input id="pr-rel" maxlength="100" value="${esc(it.rel || "")}" placeholder="A neighbor"></label></div>
+    <label>Prayer need<textarea id="pr-need" rows="2" maxlength="400" placeholder="Pray for comfort and healing.">${esc(it.need || "")}</textarea></label>
+    ${it.id ? `<label>List<select id="pr-group">${PGROUPS.map(([k, t]) => `<option value="${k}"${k === g ? " selected" : ""}>${esc(t)}</option>`).join("")}</select></label>` : ""}
+    <p class="warn" id="pr-warn" role="alert" hidden></p>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Save prayer</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>`;
+const pbForm = (key) => `
+  <form class="editor" data-kind="pbanner" data-id="${esc(key)}">
+    <h3>Edit: ${esc(PBANNERS[key])}</h3>
+    <label>Text (leave empty to hide it)<textarea id="pb-text" rows="3" maxlength="500">${esc(PR()[key] || "")}</textarea></label>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Save</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>`;
+function pbanner(key, cls, lead) {
+  if (isEditing("pbanner", key)) return pbForm(key);
+  const t = PR()[key] || "";
+  if (!t && !admin) return "";
+  const body = !t ? `<span class="muted">${esc(PBANNERS[key])}: empty, so members don't see it.</span>` : lead ? `<strong>${esc(lead)}</strong> ${esc(t)}` : cls === "rose" ? `<strong>${esc(t)}</strong>` : esc(t);
+  return `<div class="banner ${cls}">${body}${admin ? `<div class="tools"><button class="tbtn" data-act="edit" data-kind="pbanner" data-id="${key}">Edit</button></div>` : ""}</div>`;
+}
+function prayGroup(key) {
+  const [, title, cls] = PGROUPS.find(x => x[0] === key);
+  const arr = PR().groups[key] || [];
+  if (!arr.length && !admin) return "";
+  const adding = admin && editing && editing.kind === "pray" && editing.id === null && editing.group === key;
+  const rows = arr.map(it => isEditing("pray", it.id) ? `<li>${prayForm(key, it)}</li>`
+    : `<li><b>${esc(it.name)}</b>${it.rel ? ` <span class="rel">(${esc(it.rel)})</span>` : ""}${it.need ? `: ${esc(it.need)}` : ""}${itemTools("pray", { id: it.id, title: it.name })}</li>`).join("");
+  return `<div class="pgroup ${cls}"><h3>${esc(title)} <span class="count">${arr.length}</span></h3>
+    ${adding ? prayForm(key) : admin ? `<div class="btns"><button class="tbtn" data-act="add" data-kind="pray" data-group="${key}">+ Add a name</button></div>` : ""}
+    <ul class="plist">${rows}</ul></div>`;
+}
+/* ---------- Pastor's blog ---------- */
+DATA.posts = DATA.posts || [];
+const posts = () => [...DATA.posts].sort((a, b) => b.date.localeCompare(a.date));
+const latestPost = () => posts()[0];
+const longDate = (iso) => dUTC(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+const paras = (body) => String(body || "").split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
+const postFull = (p) => `<article class="post"><span class="kicker">${esc(longDate(p.date))}</span><h2>${esc(p.title)}</h2>${p.verse ? `<p class="muted"><em>${esc(p.verse)}</em></p>` : ""}
+  <div class="letter">${paras(p.body).map(x => `<p>${esc(x)}</p>`).join("")}<p class="sig">Pastor Wayne</p></div><div>${shareBtn(`Pastor Wayne's note from Light in the Desert, Yucca: “${p.title}”.`, "Share by text", "sharelink")}</div>${itemTools("post", p)}</article>`;
+const postForm = (p = {}) => `
+  <form class="editor" data-kind="post" data-id="${esc(p.id || "")}">
+    <h3>${p.id ? "Edit post" : "Write a new post"}</h3>
+    <label>Title<input id="po-title" required maxlength="100" value="${esc(p.title || "")}" placeholder="A word for this week"></label>
+    <div class="row"><label>Date<input id="po-date" type="date" required value="${esc(p.date || todayAZ())}"></label><label>Scripture (optional)<input id="po-verse" maxlength="80" value="${esc(p.verse || "")}" placeholder="Romans 8:28"></label></div>
+    <label>Post<textarea id="po-body" rows="12" required maxlength="10000" placeholder="Leave a blank line between paragraphs.">${esc(p.body || "")}</textarea></label>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Publish post</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>`;
+const teaser = () => { const p = latestPost(); if (!p) return ""; const first = paras(p.body)[0] || "";
+  return `<a class="teaser" href="#pastor"><span class="kicker">From Pastor Wayne</span><span class="t">${esc(p.title)}</span><span class="muted small">${esc(first.length > 170 ? first.slice(0, 170).replace(/\s+\S*$/, "") + "…" : first)} <b>Read more</b></span></a>`; };
+
+/* ---------- Children's Ministry and Standing Up For Jesus ----------
+   Each has its own list in the data. A post shows to members once its date has come and it isn't
+   a draft. Editors see drafts and scheduled posts, marked, so they can check them first. */
+const COLS = {
+  kid: { key: "kids", tab: "kids", h: "Children's Ministry", intro: "A message each week from Janice Gould, our Youth Ministry Leader, for every member of our church family to read.", sig: "Janice Gould", from: "From our Children's Ministry", share: "A message from our Children's Ministry at Light in the Desert, Yucca", empty: "Janice's first message will be here soon.", add: "Write this week's message" },
+  sufj: { key: "blog", tab: "standing", h: "Standing Up For Jesus", intro: "Weekly posts by Rob Hooper, drawn from his book Tetelestai: the one word Jesus spoke from the cross, and the freedom it gives.", sig: "Rob Hooper", from: "Standing Up For Jesus", share: "Standing Up For Jesus, from Light in the Desert church, Yucca", empty: "The first post is on its way.", add: "Write a new post" }
+};
+DATA.kids = DATA.kids || []; DATA.blog = DATA.blog || [];
+const isLive = (p) => !p.draft && p.date <= todayAZ();
+const colItems = (kind) => [...(DATA[COLS[kind].key] || [])].filter(p => admin || isLive(p)).sort((a, b) => b.date.localeCompare(a.date));
+const colLatest = (kind) => [...(DATA[COLS[kind].key] || [])].filter(isLive).sort((a, b) => b.date.localeCompare(a.date))[0];
+const colNote = (p) => p.draft ? '<span class="draftnote">Draft: only editors can see this</span>' : p.date > todayAZ() ? `<span class="draftnote">Scheduled: members see it on ${esc(longDate(p.date))}</span>` : "";
+const colFull = (kind, p) => { const c = COLS[kind];
+  return `<article class="post">${admin ? colNote(p) : ""}<span class="kicker">${esc(longDate(p.date))}</span><h2>${esc(p.title)}</h2>${p.verse ? `<p class="muted"><em>${esc(p.verse)}</em></p>` : ""}
+  <div class="letter">${paras(p.body).map(x => `<p>${esc(x)}</p>`).join("")}<p class="sig">${esc(c.sig)}</p></div><div>${shareBtn(`${c.share}: “${p.title}”.`, "Share by text", "sharelink")}</div>${itemTools(kind, p)}</article>`; };
+const colForm = (kind, p = {}) => `
+  <form class="editor" data-kind="${kind}" data-id="${esc(p.id || "")}">
+    <h3>${p.id ? "Edit post" : esc(COLS[kind].add)}</h3>
+    <label>Title<input id="cf-title" required maxlength="120" value="${esc(p.title || "")}" placeholder="A title for this week"></label>
+    <div class="row"><label>Date members see it<input id="cf-date" type="date" required value="${esc(p.date || todayAZ())}"></label><label>Scripture (optional)<input id="cf-verse" maxlength="80" value="${esc(p.verse || "")}" placeholder="John 19:30"></label></div>
+    <label>Post<textarea id="cf-body" rows="14" required maxlength="20000" placeholder="Leave a blank line between paragraphs.">${esc(p.body || "")}</textarea></label>
+    <label class="check"><input id="cf-draft" type="checkbox"${p.draft ? " checked" : ""}> Keep as a draft (only editors can see it)</label>
+    <div class="btns"><button class="btn primary" type="submit"${saving ? " disabled" : ""}>Save</button><button class="btn" type="button" data-act="cancel">Cancel</button></div>
+  </form>`;
+const colView = (kind) => { const c = COLS[kind]; const [first, ...rest] = colItems(kind);
+  return `
+    <div class="stack" style="gap:.3rem"><span class="kicker">${esc(c.from)}</span><h2>${esc(c.h)}</h2>
+    <p class="muted" style="max-width:62ch">${esc(c.intro)}</p></div>
+    ${addArea(kind)}
+    ${first ? (isEditing(kind, first.id) ? colForm(kind, first) : colFull(kind, first)) : `<p class="muted">${esc(c.empty)}</p>`}
+    ${rest.length ? `<div class="stack"><h3>Earlier posts</h3><div>${rest.map(p => isEditing(kind, p.id) ? colForm(kind, p)
+      : `<details class="postd"><summary>${esc(p.title)} <span class="muted small">· ${esc(longDate(p.date))}${admin && (p.draft || p.date > todayAZ()) ? (p.draft ? " · draft" : " · scheduled") : ""}</span></summary>${colFull(kind, p)}</details>`).join("")}</div></div>` : ""}`; };
+const colTeaser = (kind) => { const p = colLatest(kind); if (!p) return ""; const c = COLS[kind]; const first = paras(p.body)[0] || "";
+  return `<a class="teaser" href="#${c.tab}"><span class="kicker">${esc(c.from)}</span><span class="t">${esc(p.title)}</span><span class="muted small">${esc(first.length > 170 ? first.slice(0, 170).replace(/\s+\S*$/, "") + "…" : first)} <b>Read more</b></span></a>`; };
+
+document.addEventListener("input", (ev) => {
+  const f = ev.target.closest('form.editor[data-kind="book"]');
+  if (f && f.dataset.override) { delete f.dataset.override; f.querySelector(".conflicts").hidden = true; f.querySelector('button[type="submit"]').textContent = "Save booking"; }
+});
+
+async function save(next) {
+  saving = true; msg = "Saving…"; render();
+  try {
+    await ART.publish(pageHtml(next));
+    msg = "Saved. Updating the app…"; render();
+  } catch (err) {
+    saving = false;
+    const c = err && err.code;
+    if (c === "conflict") msg = "Someone else saved a change first. Loading the latest version…";
+    else if (["not_writer", "not_granted", "not_declared", "consent_required", "capability_disabled", "capability_removed"].includes(c)) { admin = false; editing = null; msg = ""; }
+    else if (c === "rate_limited") msg = "Too many saves in a row. Wait a minute, then try again.";
+    else if (c === "too_large") msg = "That's too much text to save. Shorten it and try again.";
+    else msg = "Couldn't save. Check your connection and try again.";
+    render();
+  }
+}
+document.addEventListener("click", (ev) => {
+  const b = ev.target.closest("[data-act]");
+  if (!b || !admin || saving) return;
+  ev.preventDefault();
+  const { act, kind, id } = b.dataset;
+  if (act === "add") { editing = { kind, id: null, group: b.dataset.group }; confirmDel = null; }
+  else if (act === "edit") { editing = { kind, id }; confirmDel = null; }
+  else if (act === "cancel") { editing = null; confirmDel = null; }
+  else if (act === "del") { confirmDel = { kind, id }; editing = null; }
+  else if (act === "del-yes") {
+    const next = JSON.parse(JSON.stringify(DATA));
+    if (kind === "pray") {
+      for (const g of Object.keys(next.prayer.groups)) next.prayer.groups[g] = next.prayer.groups[g].filter(x => x.id !== id);
+      confirmDel = null; save(next); return;
+    }
+    const key = COLS[kind] ? COLS[kind].key : kind === "event" ? "events" : kind === "book" ? "bookings" : kind === "post" ? "posts" : "announcements";
+    next[key] = (next[key] || []).filter(x => x.id !== id);
+    confirmDel = null; save(next); return;
+  }
+  msg = ""; render();
+});
+document.addEventListener("submit", (ev) => {
+  const val = (id) => (document.getElementById(id)?.value || "").trim();
+  if (ev.target.closest("form.checker")) {
+    ev.preventDefault();
+    const q = { date: val("ck-date"), start: val("ck-start"), end: val("ck-end"), room: val("ck-room"), repeat: "none" };
+    const out = document.getElementById("check-out");
+    if (!q.date || toMin(q.end) <= toMin(q.start)) { out.innerHTML = `<p class="warn">Pick a date and an end time after the start time.</p>`; return; }
+    const conf = findConflicts(q, null);
+    out.innerHTML = conf.length
+      ? `<div class="conflicts"><strong>Already in use:</strong><ul>${conf.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>`
+      : `<p class="ok"><strong>Looks free</strong> on ${esc(fmtDay(q.date))}, ${esc(fmtRange(q.start, q.end))}. Call ${esc(CHURCH.phone)} to book it.</p>`;
+    return;
+  }
+  const f = ev.target.closest("form.editor");
+  if (!f) return;
+  ev.preventDefault();
+  if (!admin || saving) return;
+  const next = JSON.parse(JSON.stringify(DATA));
+  next.bookings = next.bookings || [];
+  const id = f.dataset.id || newId();
+  if (COLS[f.dataset.kind]) {
+    const key = COLS[f.dataset.kind].key;
+    const item = { id, date: val("cf-date"), title: val("cf-title"), verse: val("cf-verse"), body: (document.getElementById("cf-body")?.value || "").trim() };
+    if (document.getElementById("cf-draft")?.checked) item.draft = true;
+    if (!item.title || !item.body || !/^\d{4}-\d{2}-\d{2}$/.test(item.date)) return;
+    next[key] = next[key] || [];
+    const i = next[key].findIndex(x => x.id === id);
+    if (i >= 0) next[key][i] = item; else next[key].push(item);
+    next[key].sort((a, b) => b.date.localeCompare(a.date));
+    editing = null; save(next); return;
+  }
+  if (f.dataset.kind === "post") {
+    const item = { id, date: val("po-date"), title: val("po-title"), verse: val("po-verse"), body: (document.getElementById("po-body")?.value || "").trim() };
+    if (!item.title || !item.body || !/^\d{4}-\d{2}-\d{2}$/.test(item.date)) return;
+    next.posts = next.posts || [];
+    const i = next.posts.findIndex(x => x.id === id);
+    if (i >= 0) next.posts[i] = item; else next.posts.push(item);
+    next.posts.sort((a, b) => b.date.localeCompare(a.date));
+    editing = null; save(next); return;
+  }
+  if (f.dataset.kind === "book") {
+    const item = { id, group: val("bk-group"), date: val("bk-date"), start: val("bk-start"), end: val("bk-end"), room: val("bk-room"), repeat: val("bk-repeat") === "weekly" ? "weekly" : "none", until: "", contact: val("bk-contact"), note: val("bk-note") };
+    if (item.repeat === "weekly") item.until = val("bk-until");
+    const box = f.querySelector(".conflicts");
+    const problem = !item.group || !item.date ? "Add the group name and a date."
+      : toMin(item.end) <= toMin(item.start) ? "The end time must be after the start time."
+      : item.until && item.until < item.date ? "The last date must be after the first date." : "";
+    if (problem) { box.hidden = false; box.innerHTML = `<strong>${esc(problem)}</strong>`; return; }
+    const clashes = clashList(item, { booking: f.dataset.id || null });
+    const hard = clashes.filter(c => !c.soft), soft = clashes.filter(c => c.soft);
+    if (hard.length) {
+      delete f.dataset.override; f.querySelector('button[type="submit"]').textContent = "Save booking";
+      box.hidden = false;
+      box.innerHTML = `<strong>Can't save: that time is already taken.</strong><ul>${hard.map(c => `<li>${esc(c.text)}</li>`).join("")}</ul><span>Pick another date, time or room.</span>`;
+      return;
+    }
+    if (soft.length && f.dataset.override !== "1") {
+      box.hidden = false;
+      box.innerHTML = `<strong>Check these first:</strong><ul>${soft.map(c => `<li>${esc(c.text)}</li>`).join("")}</ul><span>These events have no end time, so the app can't tell if they overlap. Save anyway if the times don't clash.</span>`;
+      f.dataset.override = "1"; f.querySelector('button[type="submit"]').textContent = "Save anyway";
+      return;
+    }
+    const i = next.bookings.findIndex(x => x.id === id);
+    if (i >= 0) next.bookings[i] = item; else next.bookings.push(item);
+    next.bookings = next.bookings.filter(isActive);
+    editing = null; save(next); return;
+  }
+  if (f.dataset.kind === "pray") {
+    const item = { id, name: val("pr-name"), rel: val("pr-rel"), need: val("pr-need") };
+    if (!item.name) { const w = document.getElementById("pr-warn"); if (w) { w.textContent = "Add a name."; w.hidden = false; } return; }
+    const from = f.dataset.group, to = val("pr-group") || from;
+    const groups = next.prayer.groups;
+    groups[from] = (groups[from] || []);
+    const i = groups[from].findIndex(x => x.id === id);
+    if (i >= 0 && to === from) groups[from][i] = item;
+    else { if (i >= 0) groups[from].splice(i, 1); (groups[to] = groups[to] || []).push(item); }
+    editing = null; save(next); return;
+  }
+  if (f.dataset.kind === "pbanner") {
+    if (!PBANNERS[f.dataset.id]) return;
+    next.prayer[f.dataset.id] = (document.getElementById("pb-text")?.value || "").trim();
+    editing = null; save(next); return;
+  }
+  if (f.dataset.kind === "event") {
+    const old = next.events.find(x => x.id === id) || {};
+    const start = val("ev-start"), end = val("ev-end");
+    const item = { id, date: val("ev-date"), time: start ? "" : (old.time || ""), start, end: start ? end : "", title: val("ev-title"), where: val("ev-where"), note: val("ev-note") };
+    if (!item.title || !/^\d{4}-\d{2}-\d{2}$/.test(item.date)) { msg = "Add a title and a date."; render(); return; }
+    const warn = (t) => { const w = document.getElementById("ev-warn"); if (w) { w.textContent = t; w.hidden = false; } };
+    if (end && !start) { warn("Add a start time too."); return; }
+    if (start && end && toMin(end) <= toMin(start)) { warn("The end time must be after the start time."); return; }
+    const cbox = document.getElementById("ev-conf");
+    if (cbox) cbox.hidden = true;
+    if (start && end) {
+      const hard = clashList({ date: item.date, start, end, room: "", repeat: "none" }, { event: id, title: item.title }).filter(c => !c.soft);
+      if (hard.length) {
+        const w = document.getElementById("ev-warn"); if (w) w.hidden = true;
+        if (cbox) { cbox.hidden = false; cbox.innerHTML = `<strong>Can't save: that time is already taken.</strong><ul>${hard.map(c => `<li>${esc(c.text)}</li>`).join("")}</ul><span>Pick another date or time.</span>`; }
+        return;
+      }
+    }
+    const i = next.events.findIndex(x => x.id === id);
+    if (i >= 0) next.events[i] = item; else next.events.push(item);
+    next.events = next.events.filter(e => e.date >= todayAZ()).sort((a, b) => a.date.localeCompare(b.date));
+  } else {
+    const item = { id, title: val("an-title"), body: val("an-body") };
+    if (!item.title) { msg = "Add a headline."; render(); return; }
+    const i = next.announcements.findIndex(x => x.id === id);
+    if (i >= 0) next.announcements[i] = item; else next.announcements.unshift(item);
+  }
+  editing = null; save(next);
+});
+const weeklyRow = (w) => `<li class="event"><div class="dateblock weekly"><div class="d">${esc(w.day)}</div></div>
+  <div><div class="title">${esc(w.title)}</div><div class="muted small">${esc(w.time)} · ${esc(w.who)}</div></div></li>`;
+const prayRows = (arr) => `<ul class="plist">${arr.map(([n, rel, need]) => `<li><b>${esc(n)}</b>${rel ? ` <span class="rel">(${esc(rel)})</span>` : ""}: ${esc(need)}</li>`).join("")}</ul>`;
+const pgroup = (title, arr, cls = "") => `<div class="pgroup ${cls}"><h3>${esc(title)} <span class="count">${arr.length}</span></h3>${prayRows(arr)}</div>`;
+
+const VIEWS = {
+  home: () => {
+    const live = liveStatus();
+    return `
+    <div class="sharetop">${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share this page by text", "btn primary sharebig", waLine())}</div>
+    <div class="feature">
+      <div class="stack" style="gap:.4rem">
+        <span class="kicker">This week</span>
+        <div class="date">${esc(WEEK.date)}</div>
+        <div class="chips"><span class="chip warm">${esc(WEEK.season)}</span>${live ? '<span class="chip live">Live now</span>' : ""}</div>
+      </div>
+      <div>
+        <h2 style="font-size:1.4rem">“${esc(WEEK.sermon.title)}”</h2>
+        <p class="muted">${esc(WEEK.sermon.preacher)}</p>
+      </div>
+      <div class="times">
+        <div><span class="muted small">Sunday Bible Study</span><b>8:45 AM</b></div>
+        <div><span class="muted small">Sunday Service & Children's</span><b>10:15 AM</b></div>
+        <div><span class="muted small">Wednesday Bible Study</span><b>6:00 PM</b></div>
+      </div>
+      <div class="btns">${linkBtn(CHURCH.facebookUrl, live ? "Watch live now" : "Watch on Facebook Live", "primary", "play")}<a class="btn" href="#bulletin">${icon("bulletin")}Read the bulletin</a>${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share by text", "btn", waLine())}</div>
+    </div>
+
+    ${groupme()}
+
+    ${PR().praise ? `<div class="banner"><strong>Praise report:</strong> ${esc(PR().praise)}</div>` : ""}
+
+    ${teaser()}
+    ${colTeaser("kid")}
+    ${colTeaser("sufj")}
+
+    <div class="two">
+      <div class="stack">
+        <h2>Announcements</h2>
+        ${annList()}
+      </div>
+      <div class="stack">
+        <div class="section-head"><h2>Coming up</h2><a href="#events" class="small">${admin ? "Add or edit events" : "All events"}</a></div>
+        <ul class="list">${upcoming().slice(0, 3).map(e => eventRow(e, false)).join("") || '<li class="muted">No upcoming events yet.</li>'}</ul>
+        ${bldgWeek()}
+        <div class="stack" style="gap:.4rem;margin-top:.5rem">
+          <span class="kicker">Verse for the week</span>
+          <p style="font-family:var(--font-scripture);font-size:1.15rem;font-style:italic">“${esc(WEEK.memoryVerse.text)}”</p>
+          <span class="muted small">${esc(WEEK.memoryVerse.ref)}</span>
+        </div>
+      </div>
+    </div>
+    ${VIEWS.watch()}`;
+  },
+
+  kids: () => colView("kid"),
+  standing: () => colView("sufj"),
+  pastor: () => {
+    const [first, ...rest] = posts();
+    return `
+    <div class="stack" style="gap:.3rem"><span class="kicker">Pastor's blog</span><h2>From the Pastor's Desk</h2>
+    <p class="muted">Notes and encouragement from Pastor Wayne Basye.</p></div>
+    ${addArea("post")}
+    ${first ? (isEditing("post", first.id) ? postForm(first) : postFull(first)) : '<p class="muted">No posts yet.</p>'}
+    ${rest.length ? `<div class="stack"><h3>Earlier posts</h3><div>${rest.map(p => isEditing("post", p.id) ? postForm(p)
+      : `<details class="postd"><summary>${esc(p.title)} <span class="muted small">· ${esc(longDate(p.date))}</span></summary>${postFull(p)}</details>`).join("")}</div></div>` : ""}
+    <a href="${esc(CHURCH.pastorsDeskUrl)}" target="_blank" rel="noopener" class="small">Older notes on yucca.church</a>`;
+  },
+
+  connect: () => `<div class="sharetop">${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share this page by text", "btn primary sharebig", waLine())}</div>${VIEWS.involved()}<hr class="sep">${VIEWS.about()}`,
+
+  involved: () => {
+    const kinds = [...new Set(CHURCH.ministries.map(m => m.kind))];
+    return `
+    <div class="stack" style="gap:.3rem"><span class="kicker">Get involved</span><h2>There's a place for you here</h2>
+    <p class="muted" style="max-width:62ch">Everything happening at Light in the Desert, in one list. Not sure where you fit? Call the church office at ${esc(CHURCH.phone)} or email Pastor Wayne.</p>
+    <div class="btns">${textPastor("")}${emailPastor("")}</div></div>
+    <div class="chips">${kinds.map(k => `<span class="chip">${esc(k)}</span>`).join("")}</div>
+    <div class="mgrid">${CHURCH.ministries.map(m => `
+      <article class="ministry">
+        <span class="kicker">${esc(m.kind)}</span>
+        <h3>${esc(m.name)}</h3>
+        <p class="muted">${esc(m.what)}</p>
+        <dl><div><dt>When</dt><dd>${esc(m.when)}</dd></div><div><dt>Contact</dt><dd>${esc(m.who)}</dd></div></dl>
+      </article>`).join("")}</div>
+    ${groupme()}`;
+  },
+
+  bulletin: () => `
+    <div class="section-head"><div class="stack" style="gap:.3rem"><span class="kicker">Weekly bulletin</span><h2>${esc(WEEK.date)}</h2></div><span class="chip warm">${esc(WEEK.season)}</span></div>
+    <div class="two">
+      <div class="stack">
+        <h3>Order of Service</h3>
+        <ol class="order">${WEEK.order.map(o => `<li><span class="part">${esc(o.part)}</span>${o.msg ? `<span class="msg">“${esc(o.msg)}”</span>` : ""}<span class="who">${esc(o.who)}</span></li>`).join("")}</ol>
+        <p class="muted small">${esc(WEEK.sponsor)}</p>
+      </div>
+      <div class="stack">
+        <h3>From the Pastor's Desk</h3>
+        ${latestPost() ? `<div class="letter">${paras(latestPost().body).map(p => `<p>${esc(p)}</p>`).join("")}<p class="sig">Pastor Wayne</p></div>` : ""}
+        <a href="#pastor" class="small">More on Pastor Wayne's blog</a>
+      </div>
+    </div>
+    <div class="btns"><a class="btn" href="#scripture">${icon("scripture")}This week's scripture</a><a class="btn" href="#prayer">${icon("prayer")}Prayer list</a><a class="btn" href="#events">${icon("events")}Church events</a>${shareBtn(`Light in the Desert church bulletin for ${WEEK.date}: “${WEEK.sermon.title}”.`, "Share by text", "btn")}</div>`,
+
+  scripture: () => `
+    <div class="stack" style="gap:.3rem"><span class="kicker">Scripture for the week</span><h2>“${esc(WEEK.sermon.title)}”</h2>
+    <p class="muted">${esc(WEEK.scriptureVersion)}. Tap “Open in Bible app” to read the whole chapter.</p></div>
+    <div class="stack" style="gap:1.5rem">${WEEK.scripture.map(s => `
+      <article class="passage">
+        <h3>${esc(s.ref)}</h3>
+        <p class="scripture">${s.verses.map(([n, t]) => `<sup>${n}</sup>${esc(t).replace(/\[\[(.+?)\]\]/g, "<u>$1</u>")}`).join(" ")}</p>
+        <div class="btns"><a class="btn" href="${esc(s.link)}" target="_blank" rel="noopener">${icon("scripture")}Open in Bible app</a></div>
+      </article>`).join("")}</div>
+    <p class="version">Scripture taken from the New King James Version®. Copyright © 1982 by Thomas Nelson. Used by permission. All rights reserved.</p>`,
+
+  prayer: () => {
+    return `
+    <div class="stack" style="gap:.3rem"><span class="kicker">Prayer requests · ${esc(WEEK.date.replace("Sunday, ", ""))}</span><h2>Pray for one another</h2></div>
+    <div class="btns">${shareBtn("Please pray with us at Light in the Desert church, Yucca.", "Share by text", "btn")}</div>
+    ${pbanner("praise", "", "Praise report:")}
+    ${pbanner("nation", "rose")}
+    ${pbanner("all", "")}
+    <p class="muted" style="max-width:62ch">To protect our church family's privacy, the names on our prayer list aren't shown on this public page.</p>
+    <div class="stack" style="gap:.5rem">
+      <h3>Have a prayer request?</h3>
+      <p class="muted">Call the church office or email Pastor Wayne & Sandi.</p>
+      <div class="btns">${textPastor("Prayer request: ")}${emailPastor("Prayer request")}</div>
+      <div class="copyrow"><code id="pp">${esc(CHURCH.phone)}</code><button class="copybtn" data-copy="pp">Copy</button><code id="pe">${esc(CHURCH.email)}</code><button class="copybtn" data-copy="pe">Copy</button></div>
+    </div>`;
+  },
+
+  events: () => `
+    <div class="two">
+      <div class="stack">
+        <h2>Coming up</h2>
+        ${addArea("event")}
+        <ul class="list">${upcoming().map(e => isEditing("event", e.id) ? `<li>${eventForm(e)}</li>` : eventRow(e, true)).join("") || '<li class="muted">No upcoming events yet.</li>'}</ul>
+      </div>
+      <div class="stack">
+        <h2>Every week</h2>
+        <ul class="list">${CHURCH.weekly.map(weeklyRow).join("")}</ul>
+        <h3 style="margin-top:.6rem">Every month</h3>
+        <ul class="list">${CHURCH.monthly.map(weeklyRow).join("")}</ul>
+      </div>
+    </div>
+    <div class="stack" id="building">
+      <div class="stack" style="gap:.3rem"><span class="kicker">Building calendar</span><h2>Community groups meeting here</h2>
+      <p class="muted" style="max-width:62ch">Our church opens its doors to the community. These groups use the building outside our own services. To ask about using the building, call ${esc(CHURCH.phone)}.</p>
+      <div class="btns">${textPastor("Hi Pastor Wayne, I'd like to ask about using the church building: ")}${emailPastor("Using the church building")}</div></div>
+      ${addArea("book")}
+      <ul class="list">${activeBookings().map(b => isEditing("book", b.id) ? `<li>${bookForm(b)}</li>` : bookingRow(b)).join("") || '<li class="muted">No community groups are booked right now.</li>'}</ul>
+      ${checker()}
+    </div>`,
+
+  watch: () => {
+    const live = liveStatus();
+    return `
+    <div class="feature">
+      <div class="section-head"><h2 style="font-size:1.35rem">Watch our services</h2>${live ? '<span class="chip live">Live now</span>' : '<span class="chip">Arizona time</span>'}</div>
+      <div class="times">
+        <div><span class="muted small">Sunday Service, live</span><b>10:15 AM</b></div>
+        <div><span class="muted small">Wednesday Bible Study, live</span><b>6:00 PM</b></div>
+        <div><span class="muted small">On YouTube</span><b>The day after</b></div>
+      </div>
+      <p class="muted">Services stream live on Facebook (“Church of Yucca”) and are posted to YouTube the next day. Arizona doesn't change clocks, so times are the same all year.</p>
+      <div class="btns">${linkBtn(CHURCH.facebookUrl, live ? "Watch live now" : "Facebook Live", "primary", "play")}${linkBtn(CHURCH.youtubeUrl, "Past services on YouTube", "", "play")}</div>
+    </div>
+    <div class="stack">
+      <h2>Recent messages</h2>
+      <ul class="list">
+        <li class="event"><div class="dateblock"><div class="m">Nov</div><div class="d">22</div></div>
+          <div><div class="title">“${esc(WEEK.sermon.title)}”</div><div class="muted small">${esc(WEEK.sermon.preacher)} · Thanksgiving · on YouTube Monday</div></div></li>
+      </ul>
+      <div class="btns">${linkBtn(CHURCH.youtubeUrl, "All past services")}${linkBtn(CHURCH.pastorsDeskUrl, "From the Pastor's Desk archive")}</div>
+    </div>`;
+  },
+
+  about: () => `
+    <div class="two">
+      <div class="stack" style="gap:1.6rem">
+        <div class="stack">
+          <h2>Plan your visit</h2>
+          <p>Come as you are, casual or formal. Travelers and locals are always welcome. Sunday Bible Study is at 8:45 AM, and the service and Children's Ministry start at 10:15 AM.</p>
+          <div class="copyrow"><code id="addr">${esc(CHURCH.address)}</code><button class="copybtn" data-copy="addr">Copy</button></div>
+        </div>
+        <div class="stack">
+          <h3>Contact Pastor Wayne Basye</h3>
+          <div class="btns">${textPastor("")}${emailPastor("")}</div>
+          <div class="copyrow"><span class="muted">Church</span><code id="ph">${esc(CHURCH.phone)}</code><button class="copybtn" data-copy="ph">Copy</button></div>
+          <div class="copyrow"><span class="muted">Email</span><code id="em">${esc(CHURCH.email)}</code><button class="copybtn" data-copy="em">Copy</button></div>
+          <div class="copyrow"><span class="muted">Mail</span><code id="ml">${esc(CHURCH.mail)}</code><button class="copybtn" data-copy="ml">Copy</button></div>
+          <div class="btns">${linkBtn(CHURCH.facebookUrl, "Facebook")}${linkBtn(CHURCH.websiteUrl, "yucca.church")}</div>
+        </div>
+      </div>
+      <div class="stack">
+        <h2>Put this app on your phone</h2>
+        <p class="muted">It works like an app and it's free. No app store needed.</p>
+        <h3 style="font-size:1rem;font-family:var(--font-body);font-weight:700">iPhone</h3>
+        <ol class="steps"><li>Open this page in Safari.</li><li>Tap the Share button.</li><li>Choose <strong>Add to Home Screen</strong>.</li></ol>
+        <h3 style="font-size:1rem;font-family:var(--font-body);font-weight:700">Android</h3>
+        <ol class="steps"><li>Open this page in Chrome.</li><li>Tap the ⋮ menu.</li><li>Choose <strong>Add to Home screen</strong>.</li></ol>
+      </div>
+    </div>
+    <div class="stack">
+      <h2>Who we are</h2>
+      <p class="muted" style="max-width:66ch">Our mission is to spread the message that God loved us in spite of our sin and sent His own Son Jesus to die in our place, to conquer sin and death and bridge the gap between God and man. The gift of Christ's sacrifice opens the door to all who are willing to know Him, accept this gift and follow Him.</p>
+      <div>
+        <details><summary>Statement of Faith</summary>
+          <ol class="faith">${CHURCH.faith.map(([t, r]) => `<li>${esc(t)}${r ? ` <span class="refs">(${esc(r)})</span>` : ""}</li>`).join("")}</ol>
+        </details>
+        <details><summary>Church leadership</summary>
+          <div class="people">
+            <div><span class="kicker">Officers</span><ul>${CHURCH.officers.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>
+            <div><span class="kicker">Deacons</span><ul>${CHURCH.deacons.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>
+            <div><span class="kicker">Board members</span><ul>${CHURCH.board.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>
+          </div>
+        </details>
+      </div>
+    </div>`
+};
+
+function render() {
+  const raw = (location.hash || "#home").slice(1);
+  const id = { involved: "connect", about: "connect" }[raw] || raw;
+  const view = VIEWS[id] ? id : "home";
+  document.getElementById("tabs").innerHTML = TABS.map(([k, label]) =>
+    `<a class="tab" href="#${k}" ${k === view ? 'aria-current="page"' : ""}>${icon(k)}<span>${label}</span></a>`).join("");
+  document.getElementById("views").innerHTML = `<section class="view">${["home", "events", "pastor", "prayer", "kids", "standing"].includes(view) ? adminBar() : ""}${VIEWS[view]()}</section>`;
+  document.getElementById("foot").innerHTML = `<span>${esc(CHURCH.name)}</span><span>${esc(CHURCH.address)} · ${esc(CHURCH.phone)}</span><span><em>Under the Same Management for 2,000 Years</em></span><span class="small">Public copy: Nov 23, 2026</span>`;
+}
+document.addEventListener("click", (e) => {
+  const b = e.target.closest(".copybtn"); if (!b) return;
+  const el = document.getElementById(b.dataset.copy);
+  const done = () => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1500); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; };
+  try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch { fallback(); }
+});
+/* Share picture: the sunrise header drawn once as a PNG, so a tap can send it right away with the text. */
+const PIC_FILE = "light-in-the-desert.png";
+let SHARE_FILE = null, SHARE_PIC = PIC_FILE;
+async function makeShareFile() {
+  if (SHARE_FILE) return;
+  try {
+    const res = await fetch(PIC_FILE);
+    if (!res.ok) return;
+    const blob = await res.blob();
+    if (typeof File === "function") SHARE_FILE = new File([blob], PIC_FILE, { type: "image/png" });
+  } catch { SHARE_FILE = null; }
+}
+/* Share by text opens a small panel right under the button: the church picture, the message,
+   Text it (opens Messages with the message ready), Share with picture (the phone's own share menu,
+   where the phone has one), Copy message and Close. */
+const canShareSheet = () => typeof navigator.share === "function";
+const picHtml = () => `<img class="sharepic" src="${esc(PIC_FILE)}" alt="Light in the Desert church picture, sunrise over the desert" width="1200" height="500">
+    <p class="note">${canShareSheet() ? "Share with picture sends the picture and the message together. Or " : "To send the picture too, "}press and hold the picture, tap Copy (or Save to Photos), then paste or attach it in your text.</p>`;
+function sharePanel(a) {
+  const msg = shareMsg(a.dataset.share, a.dataset.after || "");
+  const box = document.createElement("div");
+  box.className = "sharepanel"; box.setAttribute("role", "group"); box.setAttribute("aria-label", "Share by text");
+  box.innerHTML = `<strong>Send this in a text</strong>
+    <div class="picslot">${picHtml()}</div>
+    <textarea rows="4" aria-label="Message to send" autocapitalize="off" autocorrect="off" spellcheck="false">${esc(msg)}</textarea>
+    <div class="btns"><a class="btn primary sharebig" href="${esc(smsBody("", msg))}">${icon("text")}Text it</a>${canShareSheet() ? '<button type="button" class="btn sharebig" data-sp="sheet">' + icon("share") + "Share with picture</button>" : ""}<button type="button" class="btn" data-sp="copy">Copy message</button><button type="button" class="tbtn" data-sp="close">Close</button></div>
+    <p class="note" aria-live="polite">Text it opens Messages with the message ready; just pick who to send it to. Or tap Copy message and paste it into a text.</p>`;
+  box.dataset.msg = msg;
+  return box;
+}
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("[data-share]");
+  if (a) {
+    e.preventDefault();
+    const open = a.nextElementSibling && a.nextElementSibling.classList.contains("sharepanel");
+    document.querySelectorAll(".sharepanel").forEach(p => p.remove());
+    document.querySelectorAll("[data-share]").forEach(x => x.setAttribute("aria-expanded", "false"));
+    if (!open) {
+      const box = sharePanel(a); a.after(box); a.setAttribute("aria-expanded", "true");
+      makeShareFile();
+    }
+    return;
+  }
+  const b = e.target.closest("[data-sp]"); if (!b) return;
+  const box = b.closest(".sharepanel"), note = box.querySelector(".note"), ta = box.querySelector("textarea"), msg = box.dataset.msg;
+  if (b.dataset.sp === "close") { if (box.previousElementSibling) box.previousElementSibling.setAttribute("aria-expanded", "false"); box.remove(); return; }
+  if (b.dataset.sp === "copy") {
+    const text = ta.value;
+    const selectIt = () => { try { ta.focus(); ta.select(); ta.setSelectionRange(0, text.length); } catch {} };
+    const done = () => { note.textContent = "Copied. Open a new text and paste it."; };
+    const manual = () => { selectIt(); note.textContent = "Your phone blocked copying here. The message is selected: tap Copy in the bubble, or press and hold it and tap Select All, then Copy."; };
+    selectIt();
+    let ok = false; try { ok = document.execCommand("copy"); } catch {}
+    if (ok) { done(); return; }
+    try { navigator.clipboard.writeText(text).then(done, manual); } catch { manual(); }
+    return;
+  }
+  if (b.dataset.sp === "sheet") {
+    let withPic = false;
+    try { withPic = !!SHARE_FILE && typeof navigator.canShare === "function" && navigator.canShare({ files: [SHARE_FILE] }); } catch {}
+    const data = withPic ? { title: "Light in the Desert", text: ta.value, files: [SHARE_FILE] } : { title: "Light in the Desert", text: ta.value };
+    navigator.share(data).catch(err => { if (!err || err.name !== "AbortError") note.textContent = "Your phone's share menu didn't open. Tap Text it or Copy message instead."; });
+  }
+});
+addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
+render();
+setTimeout(makeShareFile, 400);
+setInterval(() => { if (!editing && !confirmDel && !saving && !document.querySelector(".sharepanel") && ["home", "watch"].includes((location.hash || "#home").slice(1))) render(); }, 60000);
+/* Public copy: read only. Editing happens on the private page in Claude. */
+</script>
+</body></html>
