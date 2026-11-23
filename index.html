@@ -276,6 +276,12 @@ ol.faith .refs { color: var(--rose); font-size: .9rem; }
 .sharelink { display: inline-flex; align-items: center; gap: .3rem; font-size: .85rem; font-weight: 700; color: var(--accent-ink); text-decoration: none; margin-top: .3rem; }
 .sharelink svg { width: 16px; height: 16px; }
 .sharetop { margin-bottom: 1.1rem; }
+.invite { display: grid; gap: .55rem; padding: 1.3rem 1.4rem; border-radius: 14px; background: var(--accent-soft); border: 1px solid var(--accent); }
+.invite h2 { font-size: 1.45rem; }
+.invite p { max-width: 52ch; }
+.welcome { display: grid; gap: .4rem; padding: .2rem 0 .1rem; }
+.welcome p { font-family: var(--font-scripture); font-size: 1.2rem; line-height: 1.6; max-width: 60ch; }
+.invite .btn.sharebig { margin-top: .3rem; }
 .btn.sharebig { width: 100%; justify-content: center; font-size: 1.1rem; padding: .9rem 1rem; }
 button.sharelink { background: none; border: 0; padding: 0; font-family: inherit; cursor: pointer; }
 .sharepanel { flex-basis: 100%; display: grid; gap: .6rem; margin-top: .5rem; padding: 1rem; border: 1.5px solid var(--accent); border-radius: 12px; background: var(--surface); color: var(--ink); font-weight: 400; }
@@ -486,6 +492,8 @@ const emailPastor = (subject) => `<a class="btn" href="${esc("mailto:" + CHURCH.
 const linkBtn = (url, label, cls = "", ic = "link") => `<a class="btn ${cls}" href="${esc(url)}" target="_blank" rel="noopener">${icon(ic)}${esc(label)}</a>`;
 
 const TABS = [["home", "Home"], ["bulletin", "Bulletin"], ["scripture", "Scripture"], ["prayer", "Prayer"], ["events", "Events"], ["pastor", "Pastor"], ["kids", "Children"], ["standing", "Blog"], ["connect", "Connect"]];
+const INVITE = { head: "Light travels farther when it's shared.", sub: "Text this page to a friend, neighbor or family member." };
+const invite = () => `<div class="invite"><span class="kicker">Pass it on</span><h2>${esc(INVITE.head)}</h2><p>${esc(INVITE.sub)}</p>${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share this page by text", "btn primary sharebig", waLine())}</div>`;
 const groupme = () => `<div class="banner join"><div><strong>Never miss church news.</strong> Get the weekly email: send your name to ${esc(CHURCH.email)} and ask to join the list.${CHURCH.whatsappUrl ? " Or join our WhatsApp group." : ""}</div>${CHURCH.whatsappUrl ? linkBtn(CHURCH.whatsappUrl, "Join on WhatsApp", "primary") : ""}</div>`;
 
 /* Live status in Arizona time (UTC-7 all year) */
@@ -940,7 +948,7 @@ const VIEWS = {
   home: () => {
     const live = liveStatus();
     return `
-    <div class="sharetop">${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share this page by text", "btn primary sharebig", waLine())}</div>
+    <div class="welcome"><span class="kicker">Welcome</span><p>Welcome to our community of believers in Jesus Christ of Nazareth, Standing Up For Jesus. We are the Light in the Desert, bringing God's free gift of salvation to Yucca, Arizona and beyond. This page is where we share news, gather and stay connected.</p></div>
     <div class="feature">
       <div class="stack" style="gap:.4rem">
         <span class="kicker">This week</span>
@@ -959,10 +967,12 @@ const VIEWS = {
       <div class="btns">${linkBtn(CHURCH.facebookUrl, live ? "Watch live now" : "Watch on Facebook Live", "primary", "play")}<a class="btn" href="#bulletin">${icon("bulletin")}Read the bulletin</a>${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share by text", "btn", waLine())}</div>
     </div>
 
+    ${invite()}
+
     ${homeTip()}
     ${groupme()}
 
-    ${PR().praise ? `<div class="banner"><strong>Praise report:</strong> ${esc(PR().praise)}</div>` : ""}
+    <div class="banner">${PR().praise ? `<strong>Praise report:</strong> ${esc(PR().praise)}` : "<strong>Pray with us this week.</strong>"}<div class="btns" style="margin-top:.6rem"><a class="btn" href="#prayer">${icon("prayer")}See this week's prayer list</a></div></div>
 
     ${teaser()}
     ${colTeaser("kid")}
