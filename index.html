@@ -1441,7 +1441,7 @@ document.addEventListener("click", (e) => {
 addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
 render();
 setTimeout(makeShareFile, 400);
-setInterval(() => { if (!editing && !confirmDel && !saving && !document.querySelector(".sharepanel") && ["home", "watch"].includes((location.hash || "#home").slice(1))) render(); }, 60000);
+setInterval(() => { if (!editing && !confirmDel && !saving && !document.querySelector(".sharepanel, .keepguide:not([hidden])") && ["home", "watch"].includes((location.hash || "#home").slice(1))) render(); }, 60000);
 /* Public copy: read only. Editing happens on the private page in Claude. */
 </script>
 </body></html>
