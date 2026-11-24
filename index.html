@@ -187,6 +187,20 @@ form.checker label { display: grid; gap: .25rem; font-weight: 600; font-size: .9
 .teaser b { color: var(--accent-ink); }
 .teaser:hover { border-color: var(--accent); }
 .post { display: grid; gap: .6rem; }
+.keepbox { display: grid; gap: .7rem; padding: 1.4rem; border-radius: 14px; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 6px 24px -14px rgba(42,35,64,.35); }
+.keepbox h2 { font-size: clamp(1.5rem, 5vw, 1.85rem); }
+.keepbox .keepline { font-size: 1.2rem; line-height: 1.5; margin: 0; }
+.keepbox .btn.keepbig { width: 100%; justify-content: center; font-size: 1.3rem; padding: 1.05rem 1rem; margin-top: .2rem; }
+.keepbox .btn.keepbig svg { width: 26px; height: 26px; }
+.keepguide { display: grid; gap: .6rem; font-size: 1.15rem; line-height: 1.5; }
+.keepguide[hidden] { display: none !important; }
+.keepguide ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .7rem; counter-reset: kstep; }
+.keepguide li { display: flex; align-items: flex-start; gap: .75rem; counter-increment: kstep; }
+.keepguide li::before { content: counter(kstep); flex: none; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: #2a1a08; font-weight: 700; font-size: 1.1rem; }
+.keepguide .kpic { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; min-width: 2rem; height: 2rem; padding: 0 .35rem; margin: 0 .15rem; border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--accent-ink); font-weight: 700; }
+.keepguide .kpic svg { width: 1.3rem; height: 1.3rem; }
+.keepguide .kname { font-weight: 700; color: var(--accent-ink); }
+.keepguide .kdone { margin: 0; color: var(--muted); }
 .hometip { border: 1px solid var(--line); border-radius: 12px; padding: .75rem 1rem; background: var(--surface); }
 .hometip summary { display: flex; align-items: center; gap: .5rem; font-weight: 600; cursor: pointer; }
 .hometip summary svg { width: 20px; height: 20px; flex: none; }
@@ -955,6 +969,53 @@ const homeTip = () => fromHomeScreen() ? "" : `<details class="hometip"><summary
   <ul><li><strong>iPhone:</strong> open the page in Safari, tap the Share button (the square with the arrow), then tap <strong>Add to Home Screen</strong>.</li>
   <li><strong>Android:</strong> open the page in Chrome, tap the ⋮ menu, then tap <strong>Add to Home screen</strong>.</li></ul>
   <p class="muted small">A church icon appears on your phone. Tap it any time to open this page.</p></details>`;
+/* Keep us on your phone (public page): one big button. Android Chrome: the real one-tap Install.
+   iPhone and everything else: short steps for that phone and browser. Hidden when opened from the icon. */
+let installPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); installPrompt = e; });
+window.addEventListener("appinstalled", () => { installPrompt = null; document.querySelectorAll(".keepbox").forEach(b => b.remove()); });
+const keepPhone = () => {
+  const ua = navigator.userAgent || "";
+  const ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (ios) return /CriOS|FxiOS|EdgiOS/.test(ua) ? "iosother" : "iossafari";
+  return /Android/.test(ua) ? "android" : "other";
+};
+const kpic = (inner) => `<span class="kpic">${inner}</span>`;
+const kname = (t) => `<span class="kname">${t}</span>`;
+const KEEP_STEPS = {
+  iossafari: () => [`Tap the Share button ${kpic(icon("share"))} at the bottom of the screen.`,
+    `Scroll down the list that opens.`,
+    `Tap ${kname("Add to Home Screen")}.`,
+    `Tap ${kname("Add")} at the top right.`],
+  iosother: () => [`Tap the Share button ${kpic(icon("share"))} in the address bar at the top.`,
+    `Scroll down and tap ${kname("View More")}.`,
+    `Scroll to the bottom list and tap ${kname("Add to Home Screen")}.`,
+    `Tap ${kname("Add")} at the top right.`],
+  android: () => [`Tap the menu ${kpic("⋮")} at the top right of the browser.`,
+    `Tap ${kname("Add to Home screen")} or ${kname("Install app")}.`,
+    `Tap ${kname("Add")} or ${kname("Install")}.`],
+  other: () => [`Open this page on your phone.`,
+    `In your browser's menu or Share button, choose ${kname("Add to Home Screen")}.`,
+    `Tap ${kname("Add")}.`]
+};
+const keepBox = () => fromHomeScreen() ? "" : `<section class="keepbox" aria-label="Keep us on your phone"><span class="kicker">One tap, every week</span>
+  <h2>Keep us on your phone</h2>
+  <p class="keepline">One tap and Light in the Desert is on your phone, every week.</p>
+  <button type="button" class="btn primary keepbig" data-keep aria-expanded="false">${icon("home")}Add to Home Screen</button>
+  <div class="keepguide" hidden></div></section>`;
+document.addEventListener("click", async (ev) => {
+  const b = ev.target.closest("[data-keep]"); if (!b) return;
+  const box = b.closest(".keepbox"), guide = box.querySelector(".keepguide");
+  if (installPrompt) {
+    const p = installPrompt; installPrompt = null;
+    try { p.prompt(); const r = await p.userChoice; if (r && r.outcome === "accepted") { box.remove(); return; } } catch {}
+  }
+  if (!guide.hidden) { guide.hidden = true; b.setAttribute("aria-expanded", "false"); return; }
+  const steps = KEEP_STEPS[keepPhone()]();
+  guide.innerHTML = `<ol>${steps.map(t => `<li><span>${t}</span></li>`).join("")}</ol>
+    <p class="kdone">The church icon appears on your phone. Tap it any time to open this page.</p>`;
+  guide.hidden = false; b.setAttribute("aria-expanded", "true");
+});
 const VIEWS = {
   home: () => {
     const live = liveStatus();
@@ -978,9 +1039,10 @@ const VIEWS = {
       <div class="btns">${linkBtn(CHURCH.facebookUrl, live ? "Watch live now" : "Watch on Facebook Live", "primary", "play")}<a class="btn" href="#bulletin">${icon("bulletin")}Read the bulletin</a>${shareBtn("Light in the Desert church, Yucca: this week's bulletin, events and prayer list.", "Share by text", "btn", waLine())}</div>
     </div>
 
+    ${keepBox()}
+
     ${invite()}
 
-    ${homeTip()}
     ${groupme()}
 
     <div class="banner">${PR().praise ? `<strong>Praise report:</strong> ${esc(PR().praise)}` : "<strong>Pray with us this week.</strong>"}<div class="btns" style="margin-top:.6rem"><a class="btn" href="#prayer">${icon("prayer")}See this week's prayer list</a></div></div>
