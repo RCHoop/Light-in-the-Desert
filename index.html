@@ -62,6 +62,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .tab[aria-current="page"] { border-top-color: var(--accent); }
   main { padding-bottom: 5.5rem; }
 }
+/* Phones, when the page is opened on its own (not inside Claude's frame; the script adds class "shell"):
+   the page scrolls inside the body and the menu sits in the page at the bottom (sticky), not
+   position: fixed. iPhone Safari moves fixed bottom bars up and down as its own toolbar shrinks and
+   grows, which made the menu jump up the screen. */
+@media (max-width: 700px) {
+  html.shell { height: 100%; overflow: hidden; padding-bottom: 0; }
+  html.shell body { height: 100%; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; display: flex; flex-direction: column; }
+  html.shell body > * { flex-shrink: 0; }
+  html.shell main { flex: 1 0 auto; padding-bottom: 0; }
+  html.shell .tabs { position: sticky; top: auto; bottom: 0; order: 1; }
+}
+@media print { html.shell, html.shell body { height: auto !important; overflow: visible !important; display: block !important; } }
 
 main .wrap { padding-block: 1.75rem 3rem; display: grid; gap: 2rem; }
 section.view { display: grid; gap: 1.9rem; }
@@ -1438,7 +1450,10 @@ document.addEventListener("click", (e) => {
     navigator.share(data).catch(err => { if (!err || err.name !== "AbortError") note.textContent = "Your phone's share menu didn't open. Tap Text it or Copy message instead."; });
   }
 });
-addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
+/* Opened on its own (the public page, or the home screen icon): use the steady phone layout above. */
+try { if (window.top === window) document.documentElement.classList.add("shell"); } catch {}
+const toTop = () => { window.scrollTo(0, 0); document.body.scrollTop = 0; };
+addEventListener("hashchange", () => { render(); toTop(); });
 render();
 setTimeout(makeShareFile, 400);
 setInterval(() => { if (!editing && !confirmDel && !saving && !document.querySelector(".sharepanel, .keepguide:not([hidden])") && ["home", "watch"].includes((location.hash || "#home").slice(1))) render(); }, 60000);
